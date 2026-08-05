@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Portfolio</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background: #111;
+        color: #eee;
+        margin: 0;
+        padding: 20px;
+    }
+
+    h1 {
+        text-align: center;
+        margin-bottom: 40px;
+        font-size: 2.5em;
+        color: #fff;
+    }
+
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 25px;
+        max-width: 1200px;
+        margin: auto;
+    }
+
+    .card {
+        background: #1c1c1c;
+        border-radius: 10px;
+        overflow: hidden;
+        transition: transform 0.2s;
+        cursor: pointer;
+        border: 1px solid #333;
+    }
+
+    .card:hover {
+        transform: scale(1.03);
+    }
+
+    .card img {
+        width: 100%;
+        height: 160px;
+        object-fit: cover;
+    }
+
+    .card .info {
+        padding: 15px;
+    }
+
+    .card .info h3 {
+        margin: 0;
+        font-size: 1.3em;
+        color: #fff;
+    }
+
+    .card .info p {
+        margin: 8px 0 0;
+        color: #bbb;
+        font-size: 0.9em;
+    }
+</style>
+</head>
+<body>
+
+<h1>Mes Projets</h1>
+
+<div class="grid">
+
+    <!-- Projet 1 -->
+    <a class="card" href="https://tonlienversprojet1.com" target="_blank">
+        <img src="https://via.placeholder.com/400x200?text=Projet+1" alt="Projet 1">
+        <div class="info">
+            <h3>Nom du Projet 1</h3>
+            <p>Description rapide du projet.</p>
+        </div>
+    </a>
+
+    <!-- Projet 2 -->
+    <a class="card" href="https://tonlienversprojet2.com" target="_blank">
+        <img src="https://via.placeholder.com/400x200?text=Projet+2" alt="Projet 2">
+        <div class="info">
+            <h3>Nom du Projet 2</h3>
+            <p>Description rapide du projet.</p>
+        </div>
+    </a>
+
+    <!-- Projet 3 -->
+    <a class="card" href="https://tonlienversprojet3.com" target="_blank">
+        <img src="https://via.placeholder.com/400x200?text=Projet+3" alt="Projet 3">
+        <div class="info">
+            <h3>Nom du Projet 3</h3>
+            <p>Description rapide du projet.</p>
+        </div>
+    </a>
+
+    <!-- Ajoute autant de projets que tu veux -->
+</div>
+
+</body>
+</html>
