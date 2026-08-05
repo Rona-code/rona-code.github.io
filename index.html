@@ -3,113 +3,23 @@
 <head>
 <meta charset="UTF-8">
 <title>Portfolio</title>
-<style>
-    body {
-        font-family: Arial, sans-serif;
-        background: #111;
-        color: #eee;
-        margin: 0;
-        padding: 20px;
-    }
 
-    /* Header avec langue à droite */
-    .header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-bottom: 25px;
-    }
+<link rel="stylesheet" href="style.css">
+<script src="lang.js" defer></script>
+<script src="filter.js" defer></script>
 
-    h1 {
-        margin: 0;
-        font-size: 2.2em;
-    }
-
-    /* Combobox langue */
-    .lang-select {
-        background: #222;
-        color: #eee;
-        border: 1px solid #333;
-        padding: 6px 10px;
-        border-radius: 6px;
-        font-size: 0.9em;
-        cursor: pointer;
-    }
-
-    /* Tabs */
-    .tabs {
-        text-align: center;
-        margin-bottom: 30px;
-    }
-
-    .tabs button {
-        padding: 12px 25px;
-        margin: 5px;
-        background: #222;
-        border-radius: 8px;
-        border: 1px solid #333;
-        cursor: pointer;
-        font-size: 1.1em;
-        color: #eee;
-        transition: 0.2s;
-    }
-
-    .tabs button:hover {
-        background: #333;
-    }
-
-    .tabs button.active {
-        background: #555;
-        border-color: #777;
-    }
-
-    /* Grille */
-    .grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-        gap: 25px;
-        max-width: 1200px;
-        margin: auto;
-    }
-
-    .card {
-        background: #1c1c1c;
-        border-radius: 10px;
-        overflow: hidden;
-        border: 1px solid #333;
-        transition: 0.2s;
-    }
-
-    .card:hover {
-        transform: scale(1.03);
-    }
-
-    .card img {
-        width: 100%;
-        height: 160px;
-        object-fit: cover;
-    }
-
-    .card .info {
-        padding: 15px;
-    }
-</style>
 </head>
-
 <body>
 
-<!-- HEADER -->
 <div class="header">
     <h1 data-i18n="title"></h1>
 
-    <!-- COMBOBOX LANGUE -->
     <select id="lang" class="lang-select">
         <option value="fr">FR</option>
         <option value="en">EN</option>
     </select>
 </div>
 
-<!-- TABS -->
 <div class="tabs">
     <button data-filter="all" class="active" data-i18n="tab_all"></button>
     <button data-filter="windows" data-i18n="tab_windows"></button>
@@ -119,7 +29,6 @@
     <button data-filter="web" data-i18n="tab_web"></button>
 </div>
 
-<!-- GRILLE -->
 <div class="grid">
 
     <a class="card windows" href="#">
@@ -163,112 +72,6 @@
     </a>
 
 </div>
-
-<!-- SCRIPT COMPLET -->
-<script>
-/* Traductions */
-const i18n = {
-    fr: {
-        title: "Mes Projets",
-
-        tab_all: "Tous",
-        tab_windows: "Windows",
-        tab_linux: "Linux",
-        tab_mac: "MacOS",
-        tab_android: "Android",
-        tab_web: "Web",
-
-        win_title: "Projet Windows",
-        win_desc: ".exe",
-
-        linux_title: "Projet Linux",
-        linux_desc: "Binaire",
-
-        mac_title: "Projet MacOS",
-        mac_desc: "Build Mac",
-
-        android_title: "Projet Android",
-        android_desc: "APK",
-
-        web_title: "Projet Web",
-        web_desc: "Site / WebApp"
-    },
-
-    en: {
-        title: "My Projects",
-
-        tab_all: "All",
-        tab_windows: "Windows",
-        tab_linux: "Linux",
-        tab_mac: "MacOS",
-        tab_android: "Android",
-        tab_web: "Web",
-
-        win_title: "Windows Project",
-        win_desc: ".exe",
-
-        linux_title: "Linux Project",
-        linux_desc: "Binary",
-
-        mac_title: "MacOS Project",
-        mac_desc: "Mac Build",
-
-        android_title: "Android Project",
-        android_desc: "APK",
-
-        web_title: "Web Project",
-        web_desc: "Website / WebApp"
-    }
-};
-
-/* Appliquer langue */
-function applyLanguage(lang) {
-    document.querySelectorAll("[data-i18n]").forEach(el => {
-        const key = el.getAttribute("data-i18n");
-        el.textContent = i18n[lang][key];
-    });
-
-    localStorage.setItem("lang", lang);
-}
-
-/* Init langue */
-function initLanguage() {
-    const saved = localStorage.getItem("lang");
-    const browser = navigator.language.startsWith("fr") ? "fr" : "en";
-    const lang = saved || browser;
-    document.getElementById("lang").value = lang;
-    applyLanguage(lang);
-}
-
-/* Changement langue */
-document.getElementById("lang").addEventListener("change", (e) => {
-    applyLanguage(e.target.value);
-});
-
-/* Filtrage tabs */
-const buttons = document.querySelectorAll(".tabs button");
-const cards = document.querySelectorAll(".card");
-
-buttons.forEach(btn => {
-    btn.addEventListener("click", () => {
-
-        buttons.forEach(b => b.classList.remove("active"));
-        btn.classList.add("active");
-
-        const filter = btn.dataset.filter;
-
-        cards.forEach(card => {
-            if (filter === "all" || card.classList.contains(filter)) {
-                card.style.display = "block";
-            } else {
-                card.style.display = "none";
-            }
-        });
-    });
-});
-
-initLanguage();
-</script>
 
 </body>
 </html>
