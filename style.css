@@ -9,7 +9,7 @@
     --tab-active: #555;
 }
 
-.light {
+body.light {
     --bg: #f5f5f5;
     --text: #222;
     --card-bg: #fff;
@@ -19,14 +19,40 @@
     --tab-active: #c0c0c0;
 }
 
-/* Transition douce */
 body {
+    font-family: Arial, sans-serif;
     background: var(--bg);
     color: var(--text);
+    margin: 0;
+    padding: 20px;
     transition: background 0.3s, color 0.3s;
 }
 
-/* Bouton thème */
+/* Header */
+.header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.header-right {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Langue */
+.lang-select {
+    background: var(--tab-bg);
+    color: var(--text);
+    border: 1px solid var(--border);
+    padding: 6px 10px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+/* Thème */
 .theme-btn {
     background: var(--tab-bg);
     color: var(--text);
@@ -34,37 +60,11 @@ body {
     padding: 6px 10px;
     border-radius: 6px;
     cursor: pointer;
-    margin-left: 10px;
     transition: 0.2s;
 }
 
 .theme-btn:hover {
     background: var(--tab-hover);
-}
-
-body {
-    font-family: Arial, sans-serif;
-    background: #111;
-    color: #eee;
-    margin: 0;
-    padding: 20px;
-}
-
-/* Header */
-.header {
-    color: var(--text);
-}
-
-h1 {
-    margin: 0;
-    font-size: 2.2em;
-}
-
-/* Combobox langue */
-.lang-select {
-    background: var(--tab-bg);
-    color: var(--text);
-    border: 1px solid var(--border);
 }
 
 /* Tabs */
@@ -74,9 +74,15 @@ h1 {
 }
 
 .tabs button {
+    padding: 12px 25px;
+    margin: 5px;
     background: var(--tab-bg);
+    border-radius: 8px;
     border: 1px solid var(--border);
+    cursor: pointer;
+    font-size: 1.1em;
     color: var(--text);
+    transition: 0.2s;
 }
 
 .tabs button:hover {
@@ -85,10 +91,9 @@ h1 {
 
 .tabs button.active {
     background: var(--tab-active);
-    border-color: var(--border);
 }
 
-/* Grid */
+/* Cards */
 .grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -99,7 +104,10 @@ h1 {
 
 .card {
     background: var(--card-bg);
+    border-radius: 10px;
+    overflow: hidden;
     border: 1px solid var(--border);
+    transition: 0.2s;
 }
 
 .card:hover {
