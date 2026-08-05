@@ -1,0 +1,89 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #111;
+    color: #eee;
+    margin: 0;
+    padding: 20px;
+}
+
+/* Header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+h1 {
+    margin: 0;
+    font-size: 2.2em;
+}
+
+/* Combobox langue */
+.lang-select {
+    background: #222;
+    color: #eee;
+    border: 1px solid #333;
+    padding: 6px 10px;
+    border-radius: 6px;
+    font-size: 0.9em;
+    cursor: pointer;
+}
+
+/* Tabs */
+.tabs {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.tabs button {
+    padding: 12px 25px;
+    margin: 5px;
+    background: #222;
+    border-radius: 8px;
+    border: 1px solid #333;
+    cursor: pointer;
+    font-size: 1.1em;
+    color: #eee;
+    transition: 0.2s;
+}
+
+.tabs button:hover {
+    background: #333;
+}
+
+.tabs button.active {
+    background: #555;
+    border-color: #777;
+}
+
+/* Grid */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 25px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.card {
+    background: #1c1c1c;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid #333;
+    transition: 0.2s;
+}
+
+.card:hover {
+    transform: scale(1.03);
+}
+
+.card img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+}
+
+.card .info {
+    padding: 15px;
+}
