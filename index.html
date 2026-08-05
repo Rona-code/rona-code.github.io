@@ -123,4 +123,44 @@
         <img src="https://via.placeholder.com/400x200?text=Android">
         <div class="info">
             <h3>Projet Android</h3>
-            <p>
+            <p>APK</p>
+        </div>
+    </a>
+
+    <a class="card web" href="#">
+        <img src="https://via.placeholder.com/400x200?text=Web">
+        <div class="info">
+            <h3>Projet Web</h3>
+            <p>Site / WebApp</p>
+        </div>
+    </a>
+
+</div>
+
+<!-- SCRIPT DE FILTRAGE -->
+<script>
+    const buttons = document.querySelectorAll(".tabs button");
+    const cards = document.querySelectorAll(".card");
+
+    buttons.forEach(btn => {
+        btn.addEventListener("click", () => {
+
+            // Active tab
+            buttons.forEach(b => b.classList.remove("active"));
+            btn.classList.add("active");
+
+            const filter = btn.dataset.filter;
+
+            cards.forEach(card => {
+                if (filter === "all" || card.classList.contains(filter)) {
+                    card.style.display = "block";
+                } else {
+                    card.style.display = "none";
+                }
+            });
+        });
+    });
+</script>
+
+</body>
+</html>
