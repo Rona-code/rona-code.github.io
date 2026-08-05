@@ -43,6 +43,44 @@ body {
     font-size: 1.1em;
     color: #eee;
     transition: 0.2s;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Icônes OS */
+.tab-icon::before {
+    content: "";
+    width: 20px;
+    height: 20px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: inline-block;
+}
+
+/* Windows */
+.windows::before {
+    background-image: url("https://cdn-icons-png.flaticon.com/512/732/732225.png");
+}
+
+/* Linux */
+.linux::before {
+    background-image: url("https://cdn-icons-png.flaticon.com/512/518/518713.png");
+}
+
+/* Mac */
+.mac::before {
+    background-image: url("https://cdn-icons-png.flaticon.com/512/2/2235.png");
+}
+
+/* Android */
+.android::before {
+    background-image: url("https://cdn-icons-png.flaticon.com/512/226/226770.png");
+}
+
+/* Web */
+.web::before {
+    background-image: url("https://cdn-icons-png.flaticon.com/512/545/545680.png");
 }
 
 .tabs button:hover {
