@@ -18,31 +18,41 @@
         font-size: 2.5em;
     }
 
-    /* Tabs (labels only) */
+    /* Container des tabs */
     .tab-buttons {
         text-align: center;
         margin-bottom: 30px;
     }
 
+    /* Style des labels */
     .tab-buttons label {
         display: inline-block;
-        padding: 10px 20px;
+        padding: 12px 25px;
         margin: 5px;
         background: #222;
-        border-radius: 6px;
+        border-radius: 8px;
         cursor: pointer;
         transition: 0.2s;
+        font-size: 1.1em;
+        border: 1px solid #333;
     }
 
+    .tab-buttons label:hover {
+        background: #333;
+    }
+
+    /* Inputs radio invisibles */
     input[type="radio"] {
         display: none;
     }
 
+    /* Style du tab actif */
     input[type="radio"]:checked + label {
         background: #555;
+        border-color: #777;
     }
 
-    /* Grid */
+    /* Grille */
     .grid {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -74,7 +84,7 @@
         padding: 15px;
     }
 
-    /* Filtering */
+    /* Filtrage */
     #all:checked ~ .grid .card { display: block; }
     #windows:checked ~ .grid .windows { display: block; }
     #linux:checked ~ .grid .linux { display: block; }
@@ -88,69 +98,20 @@
 
 <h1>Mes Projets</h1>
 
-<!-- Inputs radio (NE PAS METTRE DANS UN DIV) -->
-<input type="radio" id="all" name="tab" checked>
-<label for="all" class="tab-buttons">All</label>
+<!-- INPUTS RADIO (NE PAS METTRE DANS UN DIV) -->
+<div style="text-align:center;">
+    <input type="radio" id="all" name="tab" checked>
+    <label for="all">All</label>
 
-<input type="radio" id="windows" name="tab">
-<label for="windows" class="tab-buttons">Windows</label>
+    <input type="radio" id="windows" name="tab">
+    <label for="windows">Windows</label>
 
-<input type="radio" id="linux" name="tab">
-<label for="linux" class="tab-buttons">Linux</label>
+    <input type="radio" id="linux" name="tab">
+    <label for="linux">Linux</label>
 
-<input type="radio" id="mac" name="tab">
-<label for="mac" class="tab-buttons">MacOS</label>
+    <input type="radio" id="mac" name="tab">
+    <label for="mac">MacOS</label>
 
-<input type="radio" id="android" name="tab">
-<label for="android" class="tab-buttons">Android</label>
+    <input type="radio" id="android" name="tab">
+    <label for="android">Android</label>
 
-<input type="radio" id="web" name="tab">
-<label for="web" class="tab-buttons">Web</label>
-
-<!-- Grille (DOIT ÊTRE JUSTE APRÈS LES INPUTS) -->
-<div class="grid">
-
-    <a class="card windows" href="#">
-        <img src="https://via.placeholder.com/400x200?text=Windows">
-        <div class="info">
-            <h3>Projet Windows</h3>
-            <p>.exe</p>
-        </div>
-    </a>
-
-    <a class="card linux" href="#">
-        <img src="https://via.placeholder.com/400x200?text=Linux">
-        <div class="info">
-            <h3>Projet Linux</h3>
-            <p>Binaire</p>
-        </div>
-    </a>
-
-    <a class="card mac" href="#">
-        <img src="https://via.placeholder.com/400x200?text=MacOS">
-        <div class="info">
-            <h3>Projet MacOS</h3>
-            <p>Build Mac</p>
-        </div>
-    </a>
-
-    <a class="card android" href="#">
-        <img src="https://via.placeholder.com/400x200?text=Android">
-        <div class="info">
-            <h3>Projet Android</h3>
-            <p>APK</p>
-        </div>
-    </a>
-
-    <a class="card web" href="#">
-        <img src="https://via.placeholder.com/400x200?text=Web">
-        <div class="info">
-            <h3>Projet Web</h3>
-            <p>Site / WebApp</p>
-        </div>
-    </a>
-
-</div>
-
-</body>
-</html>
