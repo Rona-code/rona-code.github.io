@@ -61,6 +61,7 @@
         overflow: hidden;
         transition: transform 0.2s;
         border: 1px solid #333;
+        display: none;
     }
 
     .card:hover {
@@ -90,8 +91,6 @@
     }
 
     /* Filtrage CSS */
-    .card { display: none; }
-
     #all:checked ~ .grid .card { display: block; }
     #windows:checked ~ .grid .windows { display: block; }
     #linux:checked ~ .grid .linux { display: block; }
@@ -112,3 +111,62 @@
     <input type="radio" id="windows" name="tab">
     <label for="windows">Windows</label>
 
+    <input type="radio" id="linux" name="tab">
+    <label for="linux">Linux</label>
+
+    <input type="radio" id="mac" name="tab">
+    <label for="mac">MacOS</label>
+
+    <input type="radio" id="android" name="tab">
+    <label for="android">Android</label>
+
+    <input type="radio" id="web" name="tab">
+    <label for="web">Web</label>
+</div>
+
+<div class="grid">
+
+    <a class="card windows" href="projet1.html">
+        <img src="https://via.placeholder.com/400x200?text=Windows" alt="">
+        <div class="info">
+            <h3>Projet Windows</h3>
+            <p>Version .exe</p>
+        </div>
+    </a>
+
+    <a class="card linux" href="projet2.html">
+        <img src="https://via.placeholder.com/400x200?text=Linux" alt="">
+        <div class="info">
+            <h3>Projet Linux</h3>
+            <p>Binaire Linux</p>
+        </div>
+    </a>
+
+    <a class="card mac" href="projet3.html">
+        <img src="https://via.placeholder.com/400x200?text=MacOS" alt="">
+        <div class="info">
+            <h3>Projet MacOS</h3>
+            <p>Build Mac</p>
+        </div>
+    </a>
+
+    <a class="card android" href="projet4.html">
+        <img src="https://via.placeholder.com/400x200?text=Android" alt="">
+        <div class="info">
+            <h3>Projet Android</h3>
+            <p>APK</p>
+        </div>
+    </a>
+
+    <a class="card web" href="projet5.html">
+        <img src="https://via.placeholder.com/400x200?text=Web" alt="">
+        <div class="info">
+            <h3>Projet Web</h3>
+            <p>Site / WebApp</p>
+        </div>
+    </a>
+
+</div>
+
+</body>
+</html>
