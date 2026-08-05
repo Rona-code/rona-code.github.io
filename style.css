@@ -1,3 +1,47 @@
+/* Thèmes */
+:root {
+    --bg: #111;
+    --text: #eee;
+    --card-bg: #1c1c1c;
+    --border: #333;
+    --tab-bg: #222;
+    --tab-hover: #333;
+    --tab-active: #555;
+}
+
+.light {
+    --bg: #f5f5f5;
+    --text: #222;
+    --card-bg: #fff;
+    --border: #ccc;
+    --tab-bg: #e0e0e0;
+    --tab-hover: #d5d5d5;
+    --tab-active: #c0c0c0;
+}
+
+/* Transition douce */
+body {
+    background: var(--bg);
+    color: var(--text);
+    transition: background 0.3s, color 0.3s;
+}
+
+/* Bouton thème */
+.theme-btn {
+    background: var(--tab-bg);
+    color: var(--text);
+    border: 1px solid var(--border);
+    padding: 6px 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-left: 10px;
+    transition: 0.2s;
+}
+
+.theme-btn:hover {
+    background: var(--tab-hover);
+}
+
 body {
     font-family: Arial, sans-serif;
     background: #111;
