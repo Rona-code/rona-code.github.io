@@ -6,8 +6,8 @@
 
 <link rel="stylesheet" href="style.css">
 <script src="lang.js" defer></script>
-<script src="filter.js" defer></script>
 <script src="theme.js" defer></script>
+<script src="filter.js" defer></script>
 
 </head>
 <body>
@@ -15,12 +15,14 @@
 <div class="header">
     <h1 data-i18n="title"></h1>
 
-    <select id="lang" class="lang-select">
-        <option value="fr">FR</option>
-        <option value="en">EN</option>
-    </select>
+    <div class="header-right">
+        <select id="lang" class="lang-select">
+            <option value="fr">FR</option>
+            <option value="en">EN</option>
+        </select>
 
-    <button id="theme-toggle" class="theme-btn">☀️</button>
+        <button id="theme-toggle" class="theme-btn">☀️</button>
+    </div>
 </div>
 
 <div class="tabs">
