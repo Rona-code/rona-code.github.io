@@ -18,7 +18,6 @@
         font-size: 2.5em;
     }
 
-    /* Tabs */
     .tabs {
         text-align: center;
         margin-bottom: 30px;
@@ -42,7 +41,6 @@
         background: #555;
     }
 
-    /* Grid */
     .grid {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -74,7 +72,6 @@
         padding: 15px;
     }
 
-    /* Filtering */
     #all:checked ~ .grid .card { display: block; }
     #windows:checked ~ .grid .windows { display: block; }
     #linux:checked ~ .grid .linux { display: block; }
@@ -83,42 +80,43 @@
     #web:checked ~ .grid .web { display: block; }
 </style>
 </head>
+
 <body>
 
 <h1>Mes Projets</h1>
 
-<div class="tabs">
-    <input type="radio" id="all" name="tab" checked>
-    <label for="all">All</label>
+<!-- IMPORTANT : les inputs doivent être DIRECTEMENT avant la grille -->
+<input type="radio" id="all" name="tab" checked>
+<label for="all">All</label>
 
-    <input type="radio" id="windows" name="tab">
-    <label for="windows">Windows</label>
+<input type="radio" id="windows" name="tab">
+<label for="windows">Windows</label>
 
-    <input type="radio" id="linux" name="tab">
-    <label for="linux">Linux</label>
+<input type="radio" id="linux" name="tab">
+<label for="linux">Linux</label>
 
-    <input type="radio" id="mac" name="tab">
-    <label for="mac">MacOS</label>
+<input type="radio" id="mac" name="tab">
+<label for="mac">MacOS</label>
 
-    <input type="radio" id="android" name="tab">
-    <label for="android">Android</label>
+<input type="radio" id="android" name="tab">
+<label for="android">Android</label>
 
-    <input type="radio" id="web" name="tab">
-    <label for="web">Web</label>
-</div>
+<input type="radio" id="web" name="tab">
+<label for="web">Web</label>
 
+<!-- LA GRILLE DOIT ÊTRE JUSTE APRÈS LES INPUTS -->
 <div class="grid">
 
-    <a class="card windows" href="https://tonlienversprojet1.com" target="_blank">
-        <img src="https://via.placeholder.com/400x200?text=Projet+1" alt="Projet 1">
+    <a class="card windows" href="#">
+        <img src="https://via.placeholder.com/400x200?text=Windows">
         <div class="info">
-            <h3>Nom du Projet 1</h3>
-            <p>Description rapide du projet.</p>
+            <h3>Projet Windows</h3>
+            <p>.exe</p>
         </div>
     </a>
 
     <a class="card linux" href="#">
-        <img src="https://via.placeholder.com/400x200?text=Linux" alt="">
+        <img src="https://via.placeholder.com/400x200?text=Linux">
         <div class="info">
             <h3>Projet Linux</h3>
             <p>Binaire</p>
@@ -126,7 +124,7 @@
     </a>
 
     <a class="card mac" href="#">
-        <img src="https://via.placeholder.com/400x200?text=MacOS" alt="">
+        <img src="https://via.placeholder.com/400x200?text=MacOS">
         <div class="info">
             <h3>Projet MacOS</h3>
             <p>Build Mac</p>
@@ -134,7 +132,7 @@
     </a>
 
     <a class="card android" href="#">
-        <img src="https://via.placeholder.com/400x200?text=Android" alt="">
+        <img src="https://via.placeholder.com/400x200?text=Android">
         <div class="info">
             <h3>Projet Android</h3>
             <p>APK</p>
@@ -142,7 +140,7 @@
     </a>
 
     <a class="card web" href="#">
-        <img src="https://via.placeholder.com/400x200?text=Web" alt="">
+        <img src="https://via.placeholder.com/400x200?text=Web">
         <div class="info">
             <h3>Projet Web</h3>
             <p>Site / WebApp</p>
