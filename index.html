@@ -14,11 +14,38 @@
 
     h1 {
         text-align: center;
-        margin-bottom: 30px;
+        margin-bottom: 20px;
         font-size: 2.5em;
     }
 
-    /* Tabs stylés */
+    /* Switch langue */
+    .lang-switch {
+        text-align: center;
+        margin-bottom: 25px;
+    }
+
+    .lang-btn {
+        padding: 8px 18px;
+        margin: 5px;
+        background: #222;
+        border: 1px solid #333;
+        border-radius: 6px;
+        color: #eee;
+        cursor: pointer;
+        font-size: 1em;
+        transition: 0.2s;
+    }
+
+    .lang-btn:hover {
+        background: #333;
+    }
+
+    .lang-btn.active {
+        background: #555;
+        border-color: #777;
+    }
+
+    /* Tabs */
     .tabs {
         text-align: center;
         margin-bottom: 30px;
@@ -80,16 +107,22 @@
 
 <body>
 
-<h1>Mes Projets</h1>
+<h1 data-i18n="title"></h1>
+
+<!-- SWITCH LANGUE -->
+<div class="lang-switch">
+    <button data-lang="fr" class="lang-btn active">FR</button>
+    <button data-lang="en" class="lang-btn">EN</button>
+</div>
 
 <!-- TABS -->
 <div class="tabs">
-    <button data-filter="all" class="active">All</button>
-    <button data-filter="windows">Windows</button>
-    <button data-filter="linux">Linux</button>
-    <button data-filter="mac">MacOS</button>
-    <button data-filter="android">Android</button>
-    <button data-filter="web">Web</button>
+    <button data-filter="all" class="active" data-i18n="tab_all"></button>
+    <button data-filter="windows" data-i18n="tab_windows"></button>
+    <button data-filter="linux" data-i18n="tab_linux"></button>
+    <button data-filter="mac" data-i18n="tab_mac"></button>
+    <button data-filter="android" data-i18n="tab_android"></button>
+    <button data-filter="web" data-i18n="tab_web"></button>
 </div>
 
 <!-- GRILLE -->
@@ -98,68 +131,154 @@
     <a class="card windows" href="#">
         <img src="https://via.placeholder.com/400x200?text=Windows">
         <div class="info">
-            <h3>Projet Windows</h3>
-            <p>.exe</p>
+            <h3 data-i18n="win_title"></h3>
+            <p data-i18n="win_desc"></p>
         </div>
     </a>
 
     <a class="card linux" href="#">
         <img src="https://via.placeholder.com/400x200?text=Linux">
         <div class="info">
-            <h3>Projet Linux</h3>
-            <p>Binaire</p>
+            <h3 data-i18n="linux_title"></h3>
+            <p data-i18n="linux_desc"></p>
         </div>
     </a>
 
     <a class="card mac" href="#">
         <img src="https://via.placeholder.com/400x200?text=MacOS">
         <div class="info">
-            <h3>Projet MacOS</h3>
-            <p>Build Mac</p>
+            <h3 data-i18n="mac_title"></h3>
+            <p data-i18n="mac_desc"></p>
         </div>
     </a>
 
     <a class="card android" href="#">
         <img src="https://via.placeholder.com/400x200?text=Android">
         <div class="info">
-            <h3>Projet Android</h3>
-            <p>APK</p>
+            <h3 data-i18n="android_title"></h3>
+            <p data-i18n="android_desc"></p>
         </div>
     </a>
 
     <a class="card web" href="#">
         <img src="https://via.placeholder.com/400x200?text=Web">
         <div class="info">
-            <h3>Projet Web</h3>
-            <p>Site / WebApp</p>
+            <h3 data-i18n="web_title"></h3>
+            <p data-i18n="web_desc"></p>
         </div>
     </a>
 
 </div>
 
-<!-- SCRIPT DE FILTRAGE -->
+<!-- SCRIPT COMPLET -->
 <script>
-    const buttons = document.querySelectorAll(".tabs button");
-    const cards = document.querySelectorAll(".card");
+/* Traductions */
+const i18n = {
+    fr: {
+        title: "Mes Projets",
 
-    buttons.forEach(btn => {
-        btn.addEventListener("click", () => {
+        tab_all: "Tous",
+        tab_windows: "Windows",
+        tab_linux: "Linux",
+        tab_mac: "MacOS",
+        tab_android: "Android",
+        tab_web: "Web",
 
-            // Active tab
-            buttons.forEach(b => b.classList.remove("active"));
-            btn.classList.add("active");
+        win_title: "Projet Windows",
+        win_desc: ".exe",
 
-            const filter = btn.dataset.filter;
+        linux_title: "Projet Linux",
+        linux_desc: "Binaire",
 
-            cards.forEach(card => {
-                if (filter === "all" || card.classList.contains(filter)) {
-                    card.style.display = "block";
-                } else {
-                    card.style.display = "none";
-                }
-            });
+        mac_title: "Projet MacOS",
+        mac_desc: "Build Mac",
+
+        android_title: "Projet Android",
+        android_desc: "APK",
+
+        web_title: "Projet Web",
+        web_desc: "Site / WebApp"
+    },
+
+    en: {
+        title: "My Projects",
+
+        tab_all: "All",
+        tab_windows: "Windows",
+        tab_linux: "Linux",
+        tab_mac: "MacOS",
+        tab_android: "Android",
+        tab_web: "Web",
+
+        win_title: "Windows Project",
+        win_desc: ".exe",
+
+        linux_title: "Linux Project",
+        linux_desc: "Binary",
+
+        mac_title: "MacOS Project",
+        mac_desc: "Mac Build",
+
+        android_title: "Android Project",
+        android_desc: "APK",
+
+        web_title: "Web Project",
+        web_desc: "Website / WebApp"
+    }
+};
+
+/* Appliquer langue */
+function applyLanguage(lang) {
+    document.querySelectorAll("[data-i18n]").forEach(el => {
+        const key = el.getAttribute("data-i18n");
+        el.textContent = i18n[lang][key];
+    });
+
+    document.querySelectorAll(".lang-btn").forEach(btn => {
+        btn.classList.toggle("active", btn.dataset.lang === lang);
+    });
+
+    localStorage.setItem("lang", lang);
+}
+
+/* Init langue */
+function initLanguage() {
+    const saved = localStorage.getItem("lang");
+    const browser = navigator.language.startsWith("fr") ? "fr" : "en";
+    const lang = saved || browser;
+    applyLanguage(lang);
+}
+
+/* Click langue */
+document.querySelectorAll(".lang-btn").forEach(btn => {
+    btn.addEventListener("click", () => {
+        applyLanguage(btn.dataset.lang);
+    });
+});
+
+/* Filtrage tabs */
+const buttons = document.querySelectorAll(".tabs button");
+const cards = document.querySelectorAll(".card");
+
+buttons.forEach(btn => {
+    btn.addEventListener("click", () => {
+
+        buttons.forEach(b => b.classList.remove("active"));
+        btn.classList.add("active");
+
+        const filter = btn.dataset.filter;
+
+        cards.forEach(card => {
+            if (filter === "all" || card.classList.contains(filter)) {
+                card.style.display = "block";
+            } else {
+                card.style.display = "none";
+            }
         });
     });
+});
+
+initLanguage();
 </script>
 
 </body>
