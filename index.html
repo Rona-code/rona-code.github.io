@@ -18,16 +18,13 @@
         font-size: 2.5em;
     }
 
-    .tabs {
+    /* Tabs (labels only) */
+    .tab-buttons {
         text-align: center;
         margin-bottom: 30px;
     }
 
-    .tabs input {
-        display: none;
-    }
-
-    .tabs label {
+    .tab-buttons label {
         display: inline-block;
         padding: 10px 20px;
         margin: 5px;
@@ -37,10 +34,15 @@
         transition: 0.2s;
     }
 
-    .tabs input:checked + label {
+    input[type="radio"] {
+        display: none;
+    }
+
+    input[type="radio"]:checked + label {
         background: #555;
     }
 
+    /* Grid */
     .grid {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -72,6 +74,7 @@
         padding: 15px;
     }
 
+    /* Filtering */
     #all:checked ~ .grid .card { display: block; }
     #windows:checked ~ .grid .windows { display: block; }
     #linux:checked ~ .grid .linux { display: block; }
@@ -85,26 +88,26 @@
 
 <h1>Mes Projets</h1>
 
-<!-- IMPORTANT : les inputs doivent être DIRECTEMENT avant la grille -->
+<!-- Inputs radio (NE PAS METTRE DANS UN DIV) -->
 <input type="radio" id="all" name="tab" checked>
-<label for="all">All</label>
+<label for="all" class="tab-buttons">All</label>
 
 <input type="radio" id="windows" name="tab">
-<label for="windows">Windows</label>
+<label for="windows" class="tab-buttons">Windows</label>
 
 <input type="radio" id="linux" name="tab">
-<label for="linux">Linux</label>
+<label for="linux" class="tab-buttons">Linux</label>
 
 <input type="radio" id="mac" name="tab">
-<label for="mac">MacOS</label>
+<label for="mac" class="tab-buttons">MacOS</label>
 
 <input type="radio" id="android" name="tab">
-<label for="android">Android</label>
+<label for="android" class="tab-buttons">Android</label>
 
 <input type="radio" id="web" name="tab">
-<label for="web">Web</label>
+<label for="web" class="tab-buttons">Web</label>
 
-<!-- LA GRILLE DOIT ÊTRE JUSTE APRÈS LES INPUTS -->
+<!-- Grille (DOIT ÊTRE JUSTE APRÈS LES INPUTS) -->
 <div class="grid">
 
     <a class="card windows" href="#">
