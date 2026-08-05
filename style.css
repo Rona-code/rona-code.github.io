@@ -80,7 +80,7 @@ body {
 
 /* Web */
 .web::before {
-    background-image: url("https://cdn-icons-png.flaticon.com/512/545/545680.png");
+    content: "🌐";
 }
 
 .tabs button:hover {
