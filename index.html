@@ -14,11 +14,39 @@
 
     h1 {
         text-align: center;
-        margin-bottom: 40px;
+        margin-bottom: 30px;
         font-size: 2.5em;
-        color: #fff;
     }
 
+    /* Onglets */
+    .tabs {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .tabs input {
+        display: none;
+    }
+
+    .tabs label {
+        display: inline-block;
+        padding: 10px 20px;
+        margin: 5px;
+        background: #222;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: 0.2s;
+    }
+
+    .tabs label:hover {
+        background: #333;
+    }
+
+    .tabs input:checked + label {
+        background: #555;
+    }
+
+    /* Grille */
     .grid {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -32,7 +60,6 @@
         border-radius: 10px;
         overflow: hidden;
         transition: transform 0.2s;
-        cursor: pointer;
         border: 1px solid #333;
     }
 
@@ -61,43 +88,27 @@
         color: #bbb;
         font-size: 0.9em;
     }
+
+    /* Filtrage CSS */
+    .card { display: none; }
+
+    #all:checked ~ .grid .card { display: block; }
+    #windows:checked ~ .grid .windows { display: block; }
+    #linux:checked ~ .grid .linux { display: block; }
+    #mac:checked ~ .grid .mac { display: block; }
+    #android:checked ~ .grid .android { display: block; }
+    #web:checked ~ .grid .web { display: block; }
+
 </style>
 </head>
 <body>
 
 <h1>Mes Projets</h1>
 
-<div class="grid">
+<div class="tabs">
+    <input type="radio" id="all" name="tab" checked>
+    <label for="all">All</label>
 
-    <!-- Projet 1 -->
-    <a class="card" href="https://tonlienversprojet1.com" target="_blank">
-        <img src="https://via.placeholder.com/400x200?text=Projet+1" alt="Projet 1">
-        <div class="info">
-            <h3>Nom du Projet 1</h3>
-            <p>Description rapide du projet.</p>
-        </div>
-    </a>
+    <input type="radio" id="windows" name="tab">
+    <label for="windows">Windows</label>
 
-    <!-- Projet 2 -->
-    <a class="card" href="https://tonlienversprojet2.com" target="_blank">
-        <img src="https://via.placeholder.com/400x200?text=Projet+2" alt="Projet 2">
-        <div class="info">
-            <h3>Nom du Projet 2</h3>
-            <p>Description rapide du projet.</p>
-        </div>
-    </a>
-
-    <!-- Projet 3 -->
-    <a class="card" href="https://tonlienversprojet3.com" target="_blank">
-        <img src="https://via.placeholder.com/400x200?text=Projet+3" alt="Projet 3">
-        <div class="info">
-            <h3>Nom du Projet 3</h3>
-            <p>Description rapide du projet.</p>
-        </div>
-    </a>
-
-    <!-- Ajoute autant de projets que tu veux -->
-</div>
-
-</body>
-</html>
