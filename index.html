@@ -18,7 +18,7 @@
         font-size: 2.5em;
     }
 
-    /* Onglets */
+    /* Tabs */
     .tabs {
         text-align: center;
         margin-bottom: 30px;
@@ -38,15 +38,11 @@
         transition: 0.2s;
     }
 
-    .tabs label:hover {
-        background: #333;
-    }
-
     .tabs input:checked + label {
         background: #555;
     }
 
-    /* Grille */
+    /* Grid */
     .grid {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -59,9 +55,9 @@
         background: #1c1c1c;
         border-radius: 10px;
         overflow: hidden;
-        transition: transform 0.2s;
         border: 1px solid #333;
         display: none;
+        transition: 0.2s;
     }
 
     .card:hover {
@@ -78,26 +74,13 @@
         padding: 15px;
     }
 
-    .card .info h3 {
-        margin: 0;
-        font-size: 1.3em;
-        color: #fff;
-    }
-
-    .card .info p {
-        margin: 8px 0 0;
-        color: #bbb;
-        font-size: 0.9em;
-    }
-
-    /* Filtrage CSS */
+    /* Filtering */
     #all:checked ~ .grid .card { display: block; }
     #windows:checked ~ .grid .windows { display: block; }
     #linux:checked ~ .grid .linux { display: block; }
     #mac:checked ~ .grid .mac { display: block; }
     #android:checked ~ .grid .android { display: block; }
     #web:checked ~ .grid .web { display: block; }
-
 </style>
 </head>
 <body>
@@ -126,23 +109,23 @@
 
 <div class="grid">
 
-    <a class="card windows" href="projet1.html">
+    <a class="card windows" href="#">
         <img src="https://via.placeholder.com/400x200?text=Windows" alt="">
         <div class="info">
             <h3>Projet Windows</h3>
-            <p>Version .exe</p>
+            <p>.exe</p>
         </div>
     </a>
 
-    <a class="card linux" href="projet2.html">
+    <a class="card linux" href="#">
         <img src="https://via.placeholder.com/400x200?text=Linux" alt="">
         <div class="info">
             <h3>Projet Linux</h3>
-            <p>Binaire Linux</p>
+            <p>Binaire</p>
         </div>
     </a>
 
-    <a class="card mac" href="projet3.html">
+    <a class="card mac" href="#">
         <img src="https://via.placeholder.com/400x200?text=MacOS" alt="">
         <div class="info">
             <h3>Projet MacOS</h3>
@@ -150,7 +133,7 @@
         </div>
     </a>
 
-    <a class="card android" href="projet4.html">
+    <a class="card android" href="#">
         <img src="https://via.placeholder.com/400x200?text=Android" alt="">
         <div class="info">
             <h3>Projet Android</h3>
@@ -158,7 +141,7 @@
         </div>
     </a>
 
-    <a class="card web" href="projet5.html">
+    <a class="card web" href="#">
         <img src="https://via.placeholder.com/400x200?text=Web" alt="">
         <div class="info">
             <h3>Projet Web</h3>
