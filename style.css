@@ -100,24 +100,50 @@ body {
     margin: auto;
 }
 
+/* Taille uniforme des cards */
 .card {
-    background: #1c1c1c;
-    border-radius: 10px;
+    width: 400px;
+    height: 160px;
     overflow: hidden;
-    border: 1px solid #333;
-    transition: 0.2s;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    position: relative;
 }
 
-.card:hover {
-    transform: scale(1.03);
-}
-
+/* Image recadrée */
 .card img {
     width: 100%;
-    height: auto;
-    object-fit: contain;
+    height: 100%;
+    object-fit: cover; /* crop automatique */
+    transition: all 0.3s ease;
 }
 
+/* Info masquée par défaut */
 .card .info {
-    padding: 15px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0,0,0,0.6);
+    color: #fff;
+    padding: 10px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
 }
+
+/* Effet au survol */
+.card:hover {
+    height: auto; /* libère la hauteur */
+    overflow: visible;
+    z-index: 10;
+}
+
+.card:hover img {
+    height: auto;
+    object-fit: contain; /* affiche l’image complète */
+}
+
+.card:hover .info {
+    opacity: 1;
+}
+
