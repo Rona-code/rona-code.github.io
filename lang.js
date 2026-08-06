@@ -1,6 +1,6 @@
 const i18n = {
     fr: {
-        title: "Mes Projets",
+        title: "Projets",
         tab_all: "Tous",
         tab_windows: "Windows",
         tab_linux: "Linux",
@@ -34,7 +34,7 @@ const i18n = {
     },
 
     en: {
-        title: "My Projects",
+        title: "Projects",
         tab_all: "All",
         tab_windows: "Windows",
         tab_linux: "Linux",
