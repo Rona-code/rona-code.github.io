@@ -80,7 +80,7 @@ body {
 
 /* Web */
 .web::before {
-    background-image: "🌐";
+    content: "🌐";
 }
 
 .tabs button:hover {
