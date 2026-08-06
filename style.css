@@ -102,7 +102,7 @@ body {
 
 /* Taille uniforme des cards */
 .card {
-    width: 400px;
+    width: 300px;
     height: 160px;
     overflow: hidden;
     border-radius: 10px;
