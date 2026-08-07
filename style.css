@@ -189,17 +189,59 @@ body {
     margin-top: 10px;
 }
 
+/* Boutons téléchargement */
+
 .download-btn {
     background: #4CAF50;
     color: white;
     padding: 12px 20px;
     border-radius: 8px;
     text-decoration: none;
-    font-size: 1.1em;
+    font-size: 1.05em;
+
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
 }
 
 .download-btn:hover {
     background: #45a049;
+}
+
+/* Réutilisation des icônes OS */
+
+.download-btn.windows::before,
+.download-btn.linux::before,
+.download-btn.mac::before,
+.download-btn.android::before,
+.download-btn.web::before {
+    content: "";
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.download-btn.windows::before {
+    background-image: url("https://cdn-icons-png.flaticon.com/512/732/732225.png");
+}
+
+.download-btn.linux::before {
+    background-image: url("https://cdn-icons-png.flaticon.com/512/518/518713.png");
+}
+
+.download-btn.mac::before {
+    background-image: url("https://cdn-icons-png.flaticon.com/512/2/2235.png");
+}
+
+.download-btn.android::before {
+    background-image: url("https://cdn-icons-png.flaticon.com/512/226/226770.png");
+}
+
+.download-btn.web::before {
+    background-image: url("https://cdn-icons-png.flaticon.com/512/3899/3899530.png");
 }
 
 .repo-link {
