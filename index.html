@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<title>Stusoft</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stusoft</title>
 
-<link rel="stylesheet" href="style.css">
-<script src="lang.js" defer></script>
-<script src="filter.js" defer></script>
-
+    <link rel="stylesheet" href="style.css">
+    <script src="lang.js" defer></script>
+    <script src="filter.js" defer></script>
 </head>
 <body>
 
-<div class="header">
+<header class="header">
     <h1 data-i18n="title">Projets</h1>
 
     <div class="header-right">
@@ -20,109 +20,108 @@
             <option value="en">EN</option>
         </select>
     </div>
-</div>
+</header>
 
-<div class="tabs">
+<nav class="tabs">
     <button data-filter="all" class="active" data-i18n="tab_all">Tous</button>
-
     <button data-filter="windows" class="tab-icon windows" data-i18n="tab_windows">Windows</button>
     <button data-filter="linux" class="tab-icon linux" data-i18n="tab_linux">Linux</button>
     <button data-filter="mac" class="tab-icon mac" data-i18n="tab_mac">MacOS</button>
     <button data-filter="android" class="tab-icon android" data-i18n="tab_android">Android</button>
     <button data-filter="web" class="tab-icon web" data-i18n="tab_web">Web</button>
-</div>
+</nav>
 
-<div class="grid">
+<main class="grid">
 
-    <a class="card windows linux android web" href="https://spiritecho777.github.io/pages/StuAuth/stuauth.html">
-        <img src="https://github.com/Spiritecho777/SpiritEcho777.github.io/blob/main/ressources/icone/StuAuth.png?raw=true">
+    <a class="card windows linux android web" href="./pages/StuAuth/stuauth.html">
+        <img src="./ressources/icone/StuAuth.png" alt="Icône StuAuth">
         <div class="info">
             <h3 data-i18n="title1">StuAuth</h3>
             <p data-i18n="desc1">Authentificateur TOTP/HOTP local. Pas de cloud, pas de synchronisation, pas de suivi.</p>
         </div>
     </a>
 
-    <a class="card windows linux" href="https://spiritecho777.github.io/pages/RemoteHub/remotehub.html">
-        <img src="https://github.com/Spiritecho777/SpiritEcho777.github.io/blob/main/ressources/icone/RemoteHub.png?raw=true">
+    <a class="card windows linux" href="./pages/RemoteHub/remotehub.html">
+        <img src="./ressources/icone/RemoteHub.png" alt="Icône RemoteHub">
         <div class="info">
             <h3 data-i18n="title2">RemoteHub</h3>
             <p data-i18n="desc2">Gestionnaire d'applications à distance pour Windows et Linux.</p>
         </div>
     </a>
 
-    <a class="card windows linux" href="https://spiritecho777.github.io/pages/NexusUtils/nexusutils.html">
-        <img src="https://github.com/Spiritecho777/SpiritEcho777.github.io/blob/main/ressources/icone/NexusUtils.png?raw=true">
+    <a class="card windows linux" href="./pages/NexusUtils/nexusutils.html">
+        <img src="./ressources/icone/NexusUtils.png" alt="Icône NexusUtils">
         <div class="info">
             <h3 data-i18n="title3">NexusUtils</h3>
             <p data-i18n="desc3">Ouvre des pages web préconfigurées avec remplissage automatique des formulaires.</p>
         </div>
     </a>
 
-    <a class="card windows linux" href="https://spiritecho777.github.io/pages/EchoClip/echoclip.html">
-        <img src="https://github.com/Spiritecho777/SpiritEcho777.github.io/blob/main/ressources/icone/EchoClip.png?raw=true">
+    <a class="card windows linux" href="./pages/EchoClip/echoclip.html">
+        <img src="./ressources/icone/EchoClip.png" alt="Icône EchoClip">
         <div class="info">
             <h3 data-i18n="title4">EchoClip</h3>
             <p data-i18n="desc4">Gestionnaire de presse-papiers léger.</p>
         </div>
     </a>
 
-    <a class="card windows linux" href="https://spiritecho777.github.io/pages/Shuttle/shuttle.html">
-        <img src="https://github.com/Spiritecho777/SpiritEcho777.github.io/blob/main/ressources/icone/Shuttle.png?raw=true">
+    <a class="card windows linux" href="./pages/Shuttle/shuttle.html">
+        <img src="./ressources/icone/Shuttle.png" alt="Icône Shuttle">
         <div class="info">
             <h3 data-i18n="title5">Shuttle</h3>
             <p data-i18n="desc5">Espace de travail SSH moderne avec terminal, SFTP, tunneling et monitoring.</p>
         </div>
     </a>
 
-    <a class="card mac" href="https://spiritecho777.github.io/pages/TuxWhisperer/tuxwhisperer.html">
-        <img src="https://github.com/Spiritecho777/spiritecho777.github.io/blob/main/ressources/icone/TuxWhisperer.png?raw=true">
+    <a class="card mac" href="./pages/TuxWhisperer/tuxwhisperer.html">
+        <img src="./ressources/icone/TuxWhisperer.png" alt="Icône Tux Whisperer">
         <div class="info">
             <h3 data-i18n="mac_title1">Tux Whisperer</h3>
             <p data-i18n="mac_desc1">Un compagnon pour ton Mac.</p>
         </div>
     </a>
 
-    <a class="card android" href="https://spiritecho777.github.io/pages/KeyesIOT/keyesiot.html">
-        <img src="https://github.com/Spiritecho777/SpiritEcho777.github.io/blob/main/ressources/Keyes%20IOT.png?raw=true">
+    <a class="card android" href="./pages/KeyesIOT/keyesiot.html">
+        <img src="./ressources/Keyes%20IOT.png" alt="Icône Keyes IOT Home Enhanced">
         <div class="info">
             <h3 data-i18n="android_title1">Keyes IOT Home Enhanced</h3>
             <p data-i18n="android_desc1">Version dérivée pour Android 7.0.0 et plus.</p>
         </div>
     </a>
 
-    <a class="card windows" href="https://spiritecho777.github.io/pages/Echo/echo.html">
-        <img src="https://github.com/Spiritecho777/SpiritEcho777.github.io/blob/main/ressources/icone/Echo.png?raw=true">
+    <a class="card windows" href="./pages/Echo/echo.html">
+        <img src="./ressources/icone/Echo.png" alt="Icône Echo">
         <div class="info">
             <h3 data-i18n="windows_title1">Echo</h3>
             <p data-i18n="windows_desc1">Compagnon d'écran personnalisable en WPF C#.</p>
         </div>
     </a>
 
-    <a class="card windows" href="https://spiritecho777.github.io/pages/QtLingo/qtlingo.html">
-        <img src="https://github.com/Spiritecho777/SpiritEcho777.github.io/blob/main/ressources/System%20Tools.png?raw=true">
+    <a class="card windows" href="./pages/QtLingo/qtlingo.html">
+        <img src="./ressources/System%20Tools.png" alt="Icône QtLingo">
         <div class="info">
             <h3 data-i18n="windows_title2">QtLingo</h3>
             <p data-i18n="windows_desc2">Traducteur automatique pour fichiers Qt .ts.</p>
         </div>
     </a>
 
-    <a class="card windows" href="https://spiritecho777.github.io/pages/GeneratorQR/generatorQR.html">
-        <img src="https://github.com/Spiritecho777/SpiritEcho777.github.io/blob/main/ressources/System%20Tools.png?raw=true">
+    <a class="card windows" href="./pages/GeneratorQR/generatorQR.html">
+        <img src="./ressources/System%20Tools.png" alt="Icône Générateur de QRCode">
         <div class="info">
             <h3 data-i18n="windows_title3">Générateur de QRCode</h3>
             <p data-i18n="windows_desc3">Générateur de QRCode en CLI.</p>
         </div>
     </a>
 
-    <a class="card windows" href="https://spiritecho777.github.io/pages/PatchRDP/patchrdp.html">
-        <img src="https://github.com/Spiritecho777/SpiritEcho777.github.io/blob/main/ressources/System%20Tools.png?raw=true">
+    <a class="card windows" href="./pages/PatchRDP/patchrdp.html">
+        <img src="./ressources/System%20Tools.png" alt="Icône PatchRDP">
         <div class="info">
             <h3 data-i18n="windows_title4">PatchRDP</h3>
             <p data-i18n="windows_desc4">Restaure l'accès au lecteur de carte à puce pour RDP.</p>
         </div>
     </a>
 
-</div>
+</main>
 
 </body>
 </html>
