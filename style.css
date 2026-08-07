@@ -277,9 +277,9 @@ body {
 body {
     background:
         linear-gradient(
-            rgba(42,59,124,0.85),
-            rgba(74,60,143,0.85),
-            rgba(91,63,155,0.85)
+            rgba(25, 40, 110, 0.92),   /* bleu plus sombre et saturé */
+            rgba(70, 45, 150, 0.92),  /* violet plus profond */
+            rgba(95, 50, 165, 0.92)   /* violet foncé final */
         ),
         url("https://www.transparenttextures.com/patterns/hexellence.png");
 
@@ -287,4 +287,5 @@ body {
     background-attachment: fixed;
     color: #f2f2f2;
 }
+
 
