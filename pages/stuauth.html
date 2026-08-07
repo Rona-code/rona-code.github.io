@@ -4,54 +4,69 @@
     <meta charset="UTF-8">
     <title>StuAuth – Projet</title>
     <link rel="stylesheet" href="../style.css">
+    <script src="../lang.js" defer></script>
 </head>
 
 <body>
 
-<div class="container">
+    <!-- HEADER PLEINE LARGEUR -->
+    <div class="project-header">
+        <a href="../index.html" class="back" id="back">← Retour</a>
 
-    <a href="../index.html" class="back">← Retour</a>
-
-    <h1>StuAuth</h1>
-    <p>
-        StuAuth est un authentificateur <strong>TOTP/HOTP</strong> local, sans cloud, sans synchronisation et sans suivi.
-        Il existe en plusieurs déclinaisons : Desktop, Web et Android.
-    </p>
-
-    <div class="section">
-        <h2>Téléchargements directs</h2>
-
-        <h3>StuAuth Desktop</h3>
-        <a class="download-btn" href="https://github.com/Spiritecho777/StuAuthDesktop/releases/latest/download/StuAuth.exe">
-            Télécharger StuAuth.exe
-        </a>
-
-        <h3>StuAuth Web (client Firefox)</h3>
-        <a class="download-btn" href="https://github.com/Spiritecho777/StuAuthWeb/releases/latest/download/StuAuthWeb.zip">
-            Télécharger StuAuthWeb.zip
-        </a>
-
-        <h3>StuAuth Android</h3>
-        <a class="download-btn" href="https://github.com/Spiritecho777/StuAuthAndroid/releases/latest/download/StuAuth.apk">
-            Télécharger StuAuth.apk
-        </a>
+        <select id="lang" class="lang-select">
+            <option value="fr">FR</option>
+            <option value="en">EN</option>
+        </select>
     </div>
 
-    <div class="section">
-        <h2>Captures d’écran</h2>
-        <img class="preview" src="https://github.com/Spiritecho777/SpiritEcho777.github.io/blob/main/ressources/icone/StuAuth.png?raw=true">
-    </div>
+    <!-- CONTENU CENTRÉ -->
+    <div class="project-page">
 
-    <div class="section">
-        <h2>Sources GitHub</h2>
-        <ul>
-            <li><a href="https://github.com/Spiritecho777/StuAuthDesktop">StuAuth Desktop</a></li>
-            <li><a href="https://github.com/Spiritecho777/StuAuthWeb">StuAuth Web</a></li>
-            <li><a href="https://github.com/Spiritecho777/StuAuthAndroid">StuAuth Android</a></li>
-        </ul>
-    </div>
+        <h1>StuAuth</h1>
+        <p id="description">
+                <strong>StuAuth — authentificateur TOTP/HOTP 100% local.</strong><br>
+                Pas de cloud, pas de sync forcée, pas de tracking.<br><br>
+            
+                <strong>OTP hors‑ligne</strong><br>
+                <strong>Import Google Authenticator</strong><br>
+                <strong>Stockage chiffré (AES‑256)</strong><br>
+                <strong>Sync LAN optionnelle</strong><br>
+                <strong>Windows / Linux / Android / Firefox</strong><br>
+                <strong>Licence MIT</strong><br><br>
+            
+                <em>Local. Offline.</em>
+        </p>
 
-</div>
+        <h2 id="downloads">Téléchargements directs</h2>
+        <div class="download-row">
+            <a class="download-btn" href="https://github.com/Spiritecho777/StuAuth/releases/download/v4.0.1/StuAuth_Setup_4.0.1.exe">
+                Windows (.exe)
+            </a>
+
+            <a class="download-btn" href="https://github.com/Spiritecho777/StuAuth/releases/download/v4.0.1/StuAuth.AppImage">
+                Linux (.appimage)
+            </a>
+
+            <a class="download-btn" href="https://github.com/Spiritecho777/StuAuthWeb/releases/download/v3.21/StuAuthWeb.xpi">
+                Extension Firefox (.xpi)
+            </a>
+
+            <a class="download-btn" href="https://github.com/Spiritecho777/StuAuthMobile/releases/download/v2.0.1/com.stusoft.stuauthmobile-Signed.apk">
+                Android (.apk)
+            </a>
+        </div>
+
+        <h2 id="screenshots">Captures d’écran</h2>
+        <img class="preview" src="https://github.com/Spiritecho777/spiritecho777.github.io/blob/main/ressources/Stuauth.png?raw=true">
+
+        <h2 id="sources">Sources GitHub</h2>
+        <div class="repo-row">
+            <a class="repo-link" href="https://github.com/Spiritecho777/StuAuth">Desktop</a>
+            <a class="repo-link" href="https://github.com/Spiritecho777/StuAuthWeb">Web</a>
+            <a class="repo-link" href="https://github.com/Spiritecho777/StuAuthMobile">Android</a>
+        </div>
+
+    </div>
 
 </body>
 </html>
