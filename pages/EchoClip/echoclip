@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>StuAuth</title>
+    <link rel="stylesheet" href="../../style.css">
+    <script src="lang.js" defer></script>
+</head>
+
+<body>
+
+    <!-- HEADER PLEINE LARGEUR -->
+    <div class="project-header">
+        <a href="../../index.html" class="back" id="back">← Retour</a>
+
+        <select id="lang" class="lang-select">
+            <option value="fr">FR</option>
+            <option value="en">EN</option>
+        </select>
+    </div>
+
+    <!-- CONTENU CENTRÉ -->
+    <div class="project-page">
+
+        <h1>EchoClip</h1>
+        <p id="description">
+            <strong>EchoClip — gestionnaire de presse‑papiers léger pour Windows & Linux.</strong><br>
+            Historique automatique du presse‑papiers avec support du texte, des liens et des images.<br><br>
+            
+            <strong>Surveillance en temps réel</strong><br>
+            <strong>Support Texte / Liens / Images</strong><br>
+            <strong>Détection intelligente des doublons</strong><br>
+            <strong>Intégration dans la zone de notification</strong><br>
+            <strong>Copie rapide via clic droit</strong><br>
+            <strong>Interface légère (Avalonia UI)</strong><br>
+            <strong>Windows & Linux</strong><br>
+            <strong>Licence MIT</strong><br><br>
+        </p>
+
+        <h2 id="downloads">Téléchargements directs</h2>
+        <div class="download-row">
+            <a class="download-btn windows" href="https://github.com/Spiritecho777/EchoClip/releases/download/v1.0.0/EchoClip.exe" target="_blank">
+                Windows (.exe)
+            </a>
+
+            <a class="download-btn linux" href="https://github.com/Spiritecho777/EchoClip/releases/download/v1.0.0/EchoClip.tar" target="_blank">
+                Linux (.tar)
+            </a>
+        </div>
+
+        <h2 id="screenshots">Captures d’écran</h2>
+        <img class="preview" src="https://github.com/Spiritecho777/spiritecho777.github.io/blob/main/ressources/EchoClip.png?raw=true">
+
+        <h2 id="sources">Sources GitHub</h2>
+        <div class="repo-row">
+            <a class="repo-link" href="https://github.com/Spiritecho777/EchoClip">Desktop</a>
+        </div>
+
+    </div>
+
+</body>
+</html>
