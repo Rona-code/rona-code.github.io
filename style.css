@@ -305,17 +305,35 @@ body {
 }
 
 /* Badge */
-.vibecoder-neotech {
-    padding: 6px 14px;
-    background: rgba(0, 0, 0, 0.45);
-    backdrop-filter: blur(6px);
-    border: 1px solid rgba(120, 60, 255, 0.6);
-    border-radius: 10px;
+.title-with-badge {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.vibecoder-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+    background: #0b0b0b;
+    border: 1px solid #7a3cff;
+    border-radius: 8px;
     color: #fff;
     font-weight: 600;
-    letter-spacing: 0.5px;
-    box-shadow: 0 0 8px rgba(120, 60, 255, 0.6);
+    font-size: 0.85rem;
+    box-shadow: 0 0 8px rgba(122, 60, 255, 0.5);
 }
+
+/* Petit rond logo */
+.vc-dot {
+    width: 10px;
+    height: 10px;
+    background: #7a3cff;
+    border-radius: 50%;
+    box-shadow: 0 0 6px rgba(122, 60, 255, 0.8);
+}
+
 
 
 
