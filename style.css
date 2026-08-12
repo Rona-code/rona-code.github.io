@@ -304,4 +304,18 @@ body {
     color: #f2f2f2;
 }
 
+/* Badge */
+.vibecoder-neotech {
+    padding: 6px 14px;
+    background: rgba(0, 0, 0, 0.45);
+    backdrop-filter: blur(6px);
+    border: 1px solid rgba(120, 60, 255, 0.6);
+    border-radius: 10px;
+    color: #fff;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    box-shadow: 0 0 8px rgba(120, 60, 255, 0.6);
+}
+
+
 
