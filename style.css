@@ -1,8 +1,8 @@
 /* ==========================================================================
-   PORTFOLIO STYLESHEET - FULLWIDTH & CENTERED CARDS
+   PORTFOLIO STYLESHEET - FIXED & CLEAN
    ========================================================================== */
 
-/* --- 1. RESET & SYSTEM VARIABLES --- */
+/* --- 1. RESET & VARIABLES --- */
 *, *::before, *::after {
     box-sizing: border-box;
     margin: 0;
@@ -25,9 +25,7 @@ body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     color: var(--text-primary);
     min-height: 100vh;
-    padding: 20px 10px; /* Marges réduites au strict minimum */
-    
-    /* Fond original conservé */
+    padding: 20px 15px;
     background: 
         linear-gradient(
             var(--bg-overlay),
@@ -39,20 +37,18 @@ body {
     background-attachment: fixed;
 }
 
-/* --- 2. HEADER & TOOLBAR (PLEINE LARGEUR) --- */
+/* --- 2. HEADER --- */
 .header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 100%; /* Suppression du max-width (plus de colonnes vides) */
-    padding: 0 10px;
-    margin-bottom: 20px;
+    width: 100%;
+    margin-bottom: 25px;
 }
 
 .header h1 {
     font-size: 1.8rem;
     font-weight: 700;
-    letter-spacing: -0.5px;
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
 }
 
@@ -62,35 +58,24 @@ body {
     gap: 12px;
 }
 
-.lang-select {
+.lang-select, .contact-btn {
     background: #181818;
     color: var(--text-primary);
     border: 1px solid #333;
-    padding: 8px 12px;
+    padding: 8px 14px;
     border-radius: 6px;
-    cursor: pointer;
     font-size: 0.9rem;
-    outline: none;
-}
-
-.contact-btn {
-    padding: 8px 16px;
-    background: #0b0b0b;
-    color: var(--text-primary);
-    border-radius: 6px;
     text-decoration: none;
-    font-weight: 600;
-    font-size: 0.9rem;
-    border: 1px solid #333;
+    cursor: pointer;
 }
 
-/* --- 3. ONGLETS DE FILTRAGE (TABS) --- */
+/* --- 3. ONGLETS (TABS) --- */
 .tabs {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     gap: 10px;
-    width: 100%; /* Suppression du max-width */
+    width: 100%;
     margin-bottom: 25px;
 }
 
@@ -125,27 +110,28 @@ body {
 .android::before { background-image: url("https://cdn-icons-png.flaticon.com/512/226/226770.png"); }
 .web::before     { background-image: url("https://cdn-icons-png.flaticon.com/512/3899/3899530.png"); }
 
-.tabs button:hover {
-    background: rgba(255, 255, 255, 0.15);
-}
-
+.tabs button:hover { background: rgba(255, 255, 255, 0.15); }
 .tabs button.active {
     background: var(--accent-purple);
     border-color: var(--accent-purple);
     box-shadow: 0 0 12px rgba(122, 60, 255, 0.5);
 }
 
-/* --- 4. GRILLE PLEINE LARGEUR (SANS WHITESPACE) --- */
+/* --- 4. GRILLE DE CARTES (FULLWIDTH & ALIGNEMENT STABLE) --- */
 .grid {
     display: grid;
-    /* Adapte dynamiquement pour occuper TOUTE la largeur disponible */
     grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
     gap: 15px;
-    width: 100%; /* Occupe tout l'écran, pas de colonnes vides */
-    max-width: none; /* Débloque la limite de 1200px */
+    width: 100%;
+    align-items: stretch; /* Empêche tout décalage à la filtration */
 }
 
-/* --- 5. CARTES ET ICONES CENTRÉES --- */
+/* Mask des éléments masqués par le JS au filtrage pour éviter les sauts */
+.card[style*="display: none"] {
+    display: none !important;
+}
+
+/* --- 5. CARTES --- */
 .card {
     position: relative;
     height: 160px;
@@ -157,7 +143,7 @@ body {
     text-decoration: none;
     overflow: hidden;
     
-    /* CENTRAGE ABSOLU DE L'ICÔNE DANS LA CARTE */
+    /* Conteneur Flex pour centrer */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -172,29 +158,41 @@ body {
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4), 0 0 10px rgba(122, 60, 255, 0.3);
 }
 
-/* Centrage et dimensionnement des icônes */
+/* --- GESTION DES TAILLES D'ICÔNES ET CENTRAGE FIXE --- */
 .card img {
-    max-width: 100px;
-    max-height: 100px;
+    max-width: 80%;
+    max-height: 80%;
     width: auto;
     height: auto;
     object-fit: contain;
-    margin: 0 auto; /* Centrage horizontal garanti */
     display: block;
+    margin: auto; /* Sécurité de centrage */
     transition: transform 0.2s ease;
 }
 
-.card:hover img {
-    transform: scale(0.9);
+/* Règle spécifique pour l'icône EchoClip trop petite de base */
+.card[data-project="echoclip"] img,
+.card img[src*="echoclip"],
+.card img[src*="EchoClip"] {
+    max-width: 110% !important;
+    max-height: 110% !important;
+    transform: scale(1.35); /* Grossie pour corriger sa taille native */
 }
 
-/* Overlay au survol */
+.card:hover img {
+    transform: scale(0.95);
+}
+
+.card[data-project="echoclip"]:hover img,
+.card img[src*="echoclip"]:hover,
+.card img[src*="EchoClip"]:hover {
+    transform: scale(1.25);
+}
+
+/* Overlay Info au survol */
 .card .info {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    inset: 0; /* Remplace top/left/width/height 100% */
     background: rgba(12, 10, 22, 0.94);
     padding: 12px;
     display: flex;
@@ -223,180 +221,25 @@ body {
     font-size: 0.8rem;
     color: var(--text-muted);
     line-height: 1.3;
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
 }
 
-/* HEADER PLEINE LARGEUR */
-.project-header {
+/* --- 6. FIXATION DÉDIÉE DES SOUS-PAGES / PAGES PROJETS --- */
+.project-page, 
+.project-header, 
+.project-container,
+.project-details,
+main {
     width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 40px;
-    box-sizing: border-box;
-}
-
-/* CONTENU CENTRÉ */
-.project-page {
-    max-width: 1100px;
+    max-width: 1200px; /* Conserve une structure lisible pour les sous-pages */
     margin: 0 auto;
-    padding: 0 40px 40px;
-    color: #f2f2f2; /* texte clair lisible */
-    box-sizing: border-box;
+    padding: 20px 0;
 }
 
-/* TITRES LISIBLES */
-.project-page h1,
-.project-page h2,
-.project-page h3 {
-    color: #ffffff;
-    text-shadow: 0 1px 2px rgba(0,0,0,0.4);
+/* Si les sous-pages réutilisent des composants ou des conteneurs spécifiques */
+.project-content {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 12px;
+    padding: 25px;
+    backdrop-filter: blur(6px);
 }
-
-/* TEXTE LISIBLE */
-.project-page p,
-.project-page li,
-.project-page a {
-    color: #e8e8e8;
-    text-shadow: 0 1px 2px rgba(0,0,0,0.35);
-}
-
-.download-row, .repo-row {
-    display: flex;
-    gap: 15px;
-    flex-wrap: wrap;
-    margin-top: 10px;
-}
-
-/* Boutons téléchargement */
-
-.download-btn {
-    background: #4CAF50;
-    color: white;
-    padding: 12px 20px;
-    border-radius: 8px;
-    text-decoration: none;
-    font-size: 1.05em;
-
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.download-btn:hover {
-    background: #45a049;
-}
-
-/* Réutilisation des icônes OS */
-
-.download-btn.windows::before,
-.download-btn.linux::before,
-.download-btn.mac::before,
-.download-btn.android::before,
-.download-btn.web::before {
-    content: "";
-    width: 20px;
-    height: 20px;
-    display: inline-block;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-}
-
-.download-btn.windows::before {
-    background-image: url("https://cdn-icons-png.flaticon.com/512/732/732225.png");
-}
-
-.download-btn.linux::before {
-    background-image: url("https://cdn-icons-png.flaticon.com/512/518/518713.png");
-}
-
-.download-btn.mac::before {
-    background-image: url("https://cdn-icons-png.flaticon.com/512/2/2235.png");
-}
-
-.download-btn.android::before {
-    background-image: url("https://cdn-icons-png.flaticon.com/512/226/226770.png");
-}
-
-.download-btn.web::before {
-    background-image: url("https://cdn-icons-png.flaticon.com/512/3899/3899530.png");
-}
-
-.repo-link {
-    background: #333;
-    color: white;
-    padding: 10px 15px;
-    border-radius: 6px;
-    text-decoration: none;
-}
-
-.repo-link:hover {
-    background: #555;
-}
-
-.preview {
-    width: 200px;
-    margin: 10px;
-    border-radius: 8px;
-}
-
-.back {
-    color: #f2f2f2; /* lisible sur fond sombre */
-    text-decoration: none;
-    font-size: 1.1em;
-    text-shadow: 0 1px 2px rgba(0,0,0,0.4);
-}
-
-.back:hover {
-    color: #ffffff;
-}
-
-/* FOND SOMBRE STYLISÉ */
-body {
-    background:
-        linear-gradient(
-            rgba(25, 40, 110, 0.92),   /* bleu plus sombre et saturé */
-            rgba(70, 45, 150, 0.92),  /* violet plus profond */
-            rgba(95, 50, 165, 0.92)   /* violet foncé final */
-        ),
-        url("https://www.transparenttextures.com/patterns/hexellence.png");
-
-    background-blend-mode: multiply;
-    background-attachment: fixed;
-    color: #f2f2f2;
-}
-
-/* Badge */
-.title-with-badge {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-}
-
-.vibecoder-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    padding: 6px 12px;
-    background: #0b0b0b;
-    border: 1px solid #7a3cff;
-    border-radius: 8px;
-    color: #fff;
-    font-weight: 600;
-    font-size: 0.85rem;
-    box-shadow: 0 0 8px rgba(122, 60, 255, 0.5);
-}
-
-/* Petit rond logo */
-.vc-dot {
-    width: 10px;
-    height: 10px;
-    background: #7a3cff;
-    border-radius: 50%;
-    box-shadow: 0 0 6px rgba(122, 60, 255, 0.8);
-}
-
