@@ -1,106 +1,76 @@
-/* ==========================================================================
-   PORTFOLIO STYLESHEET - FIXED & CLEAN
-   ========================================================================== */
-
-/* --- 1. RESET & VARIABLES --- */
-*, *::before, *::after {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
-:root {
-    --bg-overlay: rgba(25, 40, 110, 0.92);
-    --bg-gradient-mid: rgba(70, 45, 150, 0.92);
-    --bg-gradient-end: rgba(95, 50, 165, 0.92);
-    --card-bg: rgba(0, 0, 0, 0.35);
-    --card-border: rgba(255, 255, 255, 0.12);
-    --card-border-hover: rgba(122, 60, 255, 0.6);
-    --text-primary: #ffffff;
-    --text-muted: #d0d0d0;
-    --accent-purple: #7a3cff;
-}
-
 body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    color: var(--text-primary);
-    min-height: 100vh;
-    padding: 20px 15px;
-    background: 
-        linear-gradient(
-            var(--bg-overlay),
-            var(--bg-gradient-mid),
-            var(--bg-gradient-end)
-        ),
-        url("https://www.transparenttextures.com/patterns/hexellence.png");
-    background-blend-mode: multiply;
-    background-attachment: fixed;
+    font-family: Arial, sans-serif;
+    background: #111;
+    color: #eee;
+    margin: 0;
+    padding: 20px;
 }
 
-/* --- 2. HEADER --- */
+/* Header */
 .header {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    width: 100%;
     margin-bottom: 25px;
-}
-
-.header h1 {
-    font-size: 1.8rem;
-    font-weight: 700;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
 }
 
 .header-right {
-    display: flex;
-    align-items: center;
-    gap: 12px;
+    margin-left: auto;
 }
 
-.lang-select, .contact-btn {
-    background: #181818;
-    color: var(--text-primary);
-    border: 1px solid #333;
+/* Contact */
+.contact-btn {
+    margin-left: 15px;
     padding: 8px 14px;
+    background: #000;
+    color: #fff;
     border-radius: 6px;
-    font-size: 0.9rem;
     text-decoration: none;
+    font-weight: 500;
+    border: 1px solid #333;
+    display: inline-block;
+}
+.contact-btn:hover {
+    background: #111;
+}
+
+/* Langue */
+.lang-select {
+    background: #222;
+    color: #eee;
+    border: 1px solid #333;
+    padding: 6px 10px;
+    border-radius: 6px;
     cursor: pointer;
 }
 
-/* --- 3. ONGLETS (TABS) --- */
+/* Tabs */
 .tabs {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 10px;
-    width: 100%;
-    margin-bottom: 25px;
+    text-align: center;
+    margin-bottom: 30px;
 }
 
 .tabs button {
-    padding: 10px 18px;
-    background: rgba(0, 0, 0, 0.4);
+    padding: 12px 25px;
+    margin: 5px;
+    background: #222;
     border-radius: 8px;
-    border: 1px solid rgba(255, 255, 255, 0.15);
+    border: 1px solid #333;
     cursor: pointer;
-    font-size: 0.95rem;
-    font-weight: 500;
-    color: var(--text-primary);
-    transition: all 0.2s ease;
+    font-size: 1.1em;
+    color: #eee;
+    transition: 0.2s;
     display: inline-flex;
     align-items: center;
-    gap: 8px;
+    gap: 10px;
 }
 
+/* Icônes OS */
 .tab-icon::before {
     content: "";
-    width: 18px;
-    height: 18px;
+    width: 20px;
+    height: 20px;
     background-size: contain;
     background-repeat: no-repeat;
-    background-position: center;
     display: inline-block;
 }
 
@@ -110,99 +80,69 @@ body {
 .android::before { background-image: url("https://cdn-icons-png.flaticon.com/512/226/226770.png"); }
 .web::before     { background-image: url("https://cdn-icons-png.flaticon.com/512/3899/3899530.png"); }
 
-.tabs button:hover { background: rgba(255, 255, 255, 0.15); }
-.tabs button.active {
-    background: var(--accent-purple);
-    border-color: var(--accent-purple);
-    box-shadow: 0 0 12px rgba(122, 60, 255, 0.5);
-}
+.tabs button:hover { background: #333; }
+.tabs button.active { background: #555; }
 
-/* --- 4. GRILLE DE CARTES (FULLWIDTH & ALIGNEMENT STABLE) --- */
+/* Cards & Grid fixes */
 .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-    gap: 15px;
-    width: 100%;
-    align-items: stretch; /* Empêche tout décalage à la filtration */
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 25px;
+    max-width: 1200px;
+    margin: 0 auto;
+    justify-content: center;
 }
 
-/* Mask des éléments masqués par le JS au filtrage pour éviter les sauts */
-.card[style*="display: none"] {
-    display: none !important;
-}
-
-/* --- 5. CARTES --- */
 .card {
-    position: relative;
-    height: 160px;
     width: 100%;
-    background: var(--card-bg);
-    border: 1px solid var(--card-border);
-    border-radius: 10px;
-    padding: 12px;
-    text-decoration: none;
+    max-width: 300px;
+    height: 160px;
     overflow: hidden;
-    
-    /* Conteneur Flex pour centrer */
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    margin: 0 auto;
     display: flex;
     align-items: center;
     justify-content: center;
-    
-    backdrop-filter: blur(4px);
-    transition: transform 0.2s ease, border-color 0.2s ease;
 }
 
-.card:hover {
-    transform: translateY(-3px);
-    border-color: var(--card-border-hover);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4), 0 0 10px rgba(122, 60, 255, 0.3);
-}
-
-/* --- GESTION DES TAILLES D'ICÔNES ET CENTRAGE FIXE --- */
 .card img {
-    max-width: 80%;
-    max-height: 80%;
+    max-width: 85%;
+    max-height: 85%;
     width: auto;
     height: auto;
     object-fit: contain;
     display: block;
-    margin: auto; /* Sécurité de centrage */
-    transition: transform 0.2s ease;
+    margin: auto;
+    transition: transform 0.3s ease;
 }
 
-/* Règle spécifique pour l'icône EchoClip trop petite de base */
+/* GROSSISSEMENT SPECIFIQUE ECHOCLIP */
 .card[data-project="echoclip"] img,
 .card img[src*="echoclip"],
-.card img[src*="EchoClip"] {
-    max-width: 110% !important;
-    max-height: 110% !important;
-    transform: scale(1.35); /* Grossie pour corriger sa taille native */
+.card img[src*="EchoClip"],
+.card img[alt*="echoclip"],
+.card img[alt*="EchoClip"] {
+    max-width: 120% !important;
+    max-height: 120% !important;
+    transform: scale(1.4);
 }
 
-.card:hover img {
-    transform: scale(0.95);
-}
-
-.card[data-project="echoclip"]:hover img,
-.card img[src*="echoclip"]:hover,
-.card img[src*="EchoClip"]:hover {
-    transform: scale(1.25);
-}
-
-/* Overlay Info au survol */
 .card .info {
     position: absolute;
-    inset: 0; /* Remplace top/left/width/height 100% */
-    background: rgba(12, 10, 22, 0.94);
-    padding: 12px;
+    inset: 0;
+    background: rgba(0,0,0,0.85);
+    color: #fff;
+    padding: 15px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-    opacity: 0;
     pointer-events: none;
-    transition: opacity 0.2s ease;
 }
 
 .card:hover .info {
@@ -210,36 +150,162 @@ body {
     pointer-events: auto;
 }
 
-.card .info h3 {
-    font-size: 1rem;
-    font-weight: 700;
-    color: #ffffff;
-    margin-bottom: 6px;
-}
-
-.card .info p {
-    font-size: 0.8rem;
-    color: var(--text-muted);
-    line-height: 1.3;
-}
-
-/* --- 6. FIXATION DÉDIÉE DES SOUS-PAGES / PAGES PROJETS --- */
-.project-page, 
-.project-header, 
-.project-container,
-.project-details,
-main {
+/* HEADER PLEINE LARGEUR */
+.project-header {
     width: 100%;
-    max-width: 1200px; /* Conserve une structure lisible pour les sous-pages */
-    margin: 0 auto;
-    padding: 20px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    box-sizing: border-box;
 }
 
-/* Si les sous-pages réutilisent des composants ou des conteneurs spécifiques */
-.project-content {
-    background: var(--card-bg);
-    border: 1px solid var(--card-border);
-    border-radius: 12px;
-    padding: 25px;
-    backdrop-filter: blur(6px);
+/* CONTENU CENTRÉ */
+.project-page {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 40px 40px;
+    color: #f2f2f2;
+    box-sizing: border-box;
+}
+
+/* TITRES LISIBLES */
+.project-page h1,
+.project-page h2,
+.project-page h3 {
+    color: #ffffff;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.4);
+}
+
+/* TEXTE LISIBLE */
+.project-page p,
+.project-page li,
+.project-page a {
+    color: #e8e8e8;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.35);
+}
+
+.download-row, .repo-row {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+/* FIX BOUTONS TELECHARGEMENT SOUS-PAGES */
+.download-btn {
+    background: #4CAF50;
+    color: white !important;
+    padding: 12px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 1.05em;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    line-height: 1;
+    box-sizing: border-box;
+    transition: background 0.2s ease;
+}
+
+.download-btn:hover {
+    background: #45a049;
+}
+
+.download-btn.windows::before,
+.download-btn.linux::before,
+.download-btn.mac::before,
+.download-btn.android::before,
+.download-btn.web::before {
+    content: "";
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    flex-shrink: 0;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.download-btn.windows::before { background-image: url("https://cdn-icons-png.flaticon.com/512/732/732225.png"); }
+.download-btn.linux::before   { background-image: url("https://cdn-icons-png.flaticon.com/512/518/518713.png"); }
+.download-btn.mac::before     { background-image: url("https://cdn-icons-png.flaticon.com/512/2/2235.png"); }
+.download-btn.android::before { background-image: url("https://cdn-icons-png.flaticon.com/512/226/226770.png"); }
+.download-btn.web::before     { background-image: url("https://cdn-icons-png.flaticon.com/512/3899/3899530.png"); }
+
+.repo-link {
+    background: #333;
+    color: white !important;
+    padding: 10px 15px;
+    border-radius: 6px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+}
+
+.repo-link:hover {
+    background: #555;
+}
+
+.preview {
+    width: 200px;
+    margin: 10px;
+    border-radius: 8px;
+}
+
+.back {
+    color: #f2f2f2;
+    text-decoration: none;
+    font-size: 1.1em;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.4);
+}
+
+.back:hover {
+    color: #ffffff;
+}
+
+/* FOND SOMBRE STYLISÉ */
+body {
+    background:
+        linear-gradient(
+            rgba(25, 40, 110, 0.92),
+            rgba(70, 45, 150, 0.92),
+            rgba(95, 50, 165, 0.92)
+        ),
+        url("https://www.transparenttextures.com/patterns/hexellence.png");
+    background-blend-mode: multiply;
+    background-attachment: fixed;
+    color: #f2f2f2;
+}
+
+/* Badge */
+.title-with-badge {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.vibecoder-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+    background: #0b0b0b;
+    border: 1px solid #7a3cff;
+    border-radius: 8px;
+    color: #fff;
+    font-weight: 600;
+    font-size: 0.85rem;
+    box-shadow: 0 0 8px rgba(122, 60, 255, 0.5);
+}
+
+.vc-dot {
+    width: 10px;
+    height: 10px;
+    background: #7a3cff;
+    border-radius: 50%;
+    box-shadow: 0 0 6px rgba(122, 60, 255, 0.8);
 }
