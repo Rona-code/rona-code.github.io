@@ -4,202 +4,130 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Stusoft</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="style.css">
     <script src="lang.js" defer></script>
     <script src="filter.js" defer></script>
 </head>
 <body>
 
-<div class="bg-blur"></div>
-
 <header class="header">
-    <div class="brand">
-        <span class="logo-dot"></span>
-        <h1 data-i18n="title">Projets</h1>
-    </div>
+    <h1 data-i18n="title">Projets</h1>
 
     <div class="header-right">
-        <div class="select-wrapper">
-            <select id="lang" class="lang-select">
-                <option value="fr">FR</option>
-                <option value="en">EN</option>
-            </select>
-        </div>
+        <select id="lang" class="lang-select">
+            <option value="fr">FR</option>
+            <option value="en">EN</option>
+        </select>
 
-        <a href="mailto:rona.chaubell@gmail.com" class="contact-btn">
-            <span>Contact</span>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
-        </a>
+        <a href="mailto:rona.chaubell@gmail.com" class="contact-btn"> Contact </a>
     </div>
 </header>
 
 <nav class="tabs">
-    <button data-filter="all" class="tab-btn active" data-i18n="tab_all">Tous</button>
-    <button data-filter="windows" class="tab-btn windows" data-i18n="tab_windows">Windows</button>
-    <button data-filter="linux" class="tab-btn linux" data-i18n="tab_linux">Linux</button>
-    <button data-filter="mac" class="tab-btn mac" data-i18n="tab_mac">MacOS</button>
-    <button data-filter="android" class="tab-btn android" data-i18n="tab_android">Android</button>
-    <button data-filter="web" class="tab-btn web" data-i18n="tab_web">Web</button>
+    <button data-filter="all" class="active" data-i18n="tab_all">Tous</button>
+    <button data-filter="windows" class="tab-icon windows" data-i18n="tab_windows">Windows</button>
+    <button data-filter="linux" class="tab-icon linux" data-i18n="tab_linux">Linux</button>
+    <button data-filter="mac" class="tab-icon mac" data-i18n="tab_mac">MacOS</button>
+    <button data-filter="android" class="tab-icon android" data-i18n="tab_android">Android</button>
+    <button data-filter="web" class="tab-icon web" data-i18n="tab_web">Web</button>
 </nav>
 
 <main class="grid">
 
     <a class="card windows linux android web" href="./pages/StuAuth/stuauth.html">
-        <div class="card-media">
-            <img src="./ressources/icone/StuAuth.png" alt="Icône StuAuth">
-        </div>
-        <div class="card-content">
+        <img src="./ressources/icone/StuAuth.png" alt="Icône StuAuth">
+        <div class="info">
             <h3 data-i18n="title1">StuAuth</h3>
-            <p data-i18n="desc1">Authentificateur TOTP/HOTP local. Pas de cloud, pas de suivi.</p>
-        </div>
-        <div class="card-arrow">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            <p data-i18n="desc1">Authentificateur TOTP/HOTP local. Pas de cloud, pas de synchronisation, pas de suivi.</p>
         </div>
     </a>
 
     <a class="card windows linux" href="./pages/RemoteHub/remotehub.html">
-        <div class="card-media">
-            <img src="./ressources/icone/RemoteHub.png" alt="Icône RemoteHub">
-        </div>
-        <div class="card-content">
+        <img src="./ressources/icone/RemoteHub.png" alt="Icône RemoteHub">
+        <div class="info">
             <h3 data-i18n="title2">RemoteHub</h3>
             <p data-i18n="desc2">Gestionnaire d'applications à distance pour Windows et Linux.</p>
-        </div>
-        <div class="card-arrow">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </div>
     </a>
 
     <a class="card windows linux" href="./pages/NexusUtils/nexusutils.html">
-        <div class="card-media">
-            <img src="./ressources/icone/NexusUtils.png" alt="Icône NexusUtils">
-        </div>
-        <div class="card-content">
+        <img src="./ressources/icone/NexusUtils.png" alt="Icône NexusUtils">
+        <div class="info">
             <h3 data-i18n="title3">NexusUtils</h3>
-            <p data-i18n="desc3">Ouvre des pages web avec remplissage automatique des formulaires.</p>
-        </div>
-        <div class="card-arrow">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            <p data-i18n="desc3">Ouvre des pages web préconfigurées avec remplissage automatique des formulaires.</p>
         </div>
     </a>
 
     <a class="card windows linux" href="./pages/EchoClip/echoclip.html">
-        <div class="card-media">
-            <img src="./ressources/icone/EchoClip.png" alt="Icône EchoClip">
-        </div>
-        <div class="card-content">
+        <img src="./ressources/icone/EchoClip.png" alt="Icône EchoClip">
+        <div class="info">
             <h3 data-i18n="title4">EchoClip</h3>
-            <p data-i18n="desc4">Gestionnaire de presse-papiers léger et réactif.</p>
-        </div>
-        <div class="card-arrow">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            <p data-i18n="desc4">Gestionnaire de presse-papiers léger.</p>
         </div>
     </a>
 
     <a class="card windows linux" href="./pages/Shuttle/shuttle.html">
-        <div class="card-media">
-            <img src="./ressources/icone/Shuttle.png" alt="Icône Shuttle">
-        </div>
-        <div class="card-content">
+        <img src="./ressources/icone/Shuttle.png" alt="Icône Shuttle">
+        <div class="info">
             <h3 data-i18n="title5">Shuttle</h3>
-            <p data-i18n="desc5">Espace de travail SSH avec terminal, SFTP et monitoring.</p>
-        </div>
-        <div class="card-arrow">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            <p data-i18n="desc5">Espace de travail SSH moderne avec terminal, SFTP, tunneling et monitoring.</p>
         </div>
     </a>
 
     <a class="card mac" href="./pages/TuxWhisperer/tuxwhisperer.html">
-        <div class="card-media">
-            <img src="./ressources/icone/TuxWhisperer.png" alt="Icône Tux Whisperer">
-        </div>
-        <div class="card-content">
+        <img src="./ressources/icone/TuxWhisperer.png" alt="Icône Tux Whisperer">
+        <div class="info">
             <h3 data-i18n="mac_title1">Tux Whisperer</h3>
-            <p data-i18n="mac_desc1">Un compagnon système optimisé pour ton Mac.</p>
-        </div>
-        <div class="card-arrow">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            <p data-i18n="mac_desc1">Un compagnon pour ton Mac.</p>
         </div>
     </a>
 
     <a class="card android" href="./pages/KeyesIOT/keyesiot.html">
-        <div class="card-media">
-            <img src="./ressources/icone/Kihe.png" alt="Icône Keyes IOT Home Enhanced">
-        </div>
-        <div class="card-content">
-            <h3 data-i18n="android_title1">Keyes IOT</h3>
+        <img src="./ressources/icone/Kihe.png" alt="Icône Keyes IOT Home Enhanced">
+        <div class="info">
+            <h3 data-i18n="android_title1">Keyes IOT Home Enhanced</h3>
             <p data-i18n="android_desc1">Version dérivée pour Android 7.0.0 et plus.</p>
-        </div>
-        <div class="card-arrow">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </div>
     </a>
 
     <a class="card windows" href="./pages/Echo/echo.html">
-        <div class="card-media">
-            <img src="./ressources/icone/Echo.png" alt="Icône Echo">
-        </div>
-        <div class="card-content">
+        <img src="./ressources/icone/Echo.png" alt="Icône Echo">
+        <div class="info">
             <h3 data-i18n="windows_title1">Echo</h3>
             <p data-i18n="windows_desc1">Compagnon d'écran personnalisable en WPF C#.</p>
-        </div>
-        <div class="card-arrow">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </div>
     </a>
 
     <a class="card windows" href="./pages/QtLingo/qtlingo.html">
-        <div class="card-media">
-            <img src="./ressources/System%20Tools.png" alt="Icône QtLingo">
-        </div>
-        <div class="card-content">
+        <img src="./ressources/System%20Tools.png" alt="Icône QtLingo">
+        <div class="info">
             <h3 data-i18n="windows_title2">QtLingo</h3>
             <p data-i18n="windows_desc2">Traducteur automatique pour fichiers Qt .ts.</p>
-        </div>
-        <div class="card-arrow">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </div>
     </a>
 
     <a class="card windows" href="./pages/GeneratorQR/generatorQR.html">
-        <div class="card-media">
-            <img src="./ressources/System%20Tools.png" alt="Icône Générateur de QRCode">
-        </div>
-        <div class="card-content">
-            <h3 data-i18n="windows_title3">Générateur QR</h3>
-            <p data-i18n="windows_desc3">Générateur de QRCode puissant en CLI.</p>
-        </div>
-        <div class="card-arrow">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        <img src="./ressources/System%20Tools.png" alt="Icône Générateur de QRCode">
+        <div class="info">
+            <h3 data-i18n="windows_title3">Générateur de QRCode</h3>
+            <p data-i18n="windows_desc3">Générateur de QRCode en CLI.</p>
         </div>
     </a>
 
     <a class="card windows" href="./pages/PatchRDP/patchrdp.html">
-        <div class="card-media">
-            <img src="./ressources/System%20Tools.png" alt="Icône PatchRDP">
-        </div>
-        <div class="card-content">
+        <img src="./ressources/System%20Tools.png" alt="Icône PatchRDP">
+        <div class="info">
             <h3 data-i18n="windows_title4">PatchRDP</h3>
-            <p data-i18n="windows_desc4">Accès au lecteur de carte à puce pour RDP.</p>
-        </div>
-        <div class="card-arrow">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            <p data-i18n="windows_desc4">Restaure l'accès au lecteur de carte à puce pour RDP.</p>
         </div>
     </a>
 
     <a class="card windows linux" href="./pages/SystemMonitor/systemmonitor.html">
-        <div class="card-media">
-            <img src="./ressources/icone/SystemMonitor.png" alt="Icône System Monitor">
-        </div>
-        <div class="card-content">
+        <img src="./ressources/icone/SystemMonitor.png" alt="Icône System Monitor">
+        <div class="info">
             <h3 data-i18n="title6">System Monitor</h3>
-            <p data-i18n="desc6">Gestionnaire de tâches moderne pour Windows et Linux.</p>
-        </div>
-        <div class="card-arrow">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            <p data-i18n="desc6">Gestionnaire de tâche pour windows et Linux</p>
         </div>
     </a>
 
