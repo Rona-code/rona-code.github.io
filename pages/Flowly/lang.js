@@ -1,7 +1,7 @@
 const translations = {
     fr: {
         back: "← Retour",
-        downloads: "Téléchargements directs",
+        downloads: "Liens direct",
         screenshots: "Captures d’écran",
         sources: "Sources GitHub",
         description: `
@@ -19,7 +19,7 @@ const translations = {
 
     en: {
         back: "← Back",
-        downloads: "Direct downloads",
+        downloads: "Direct link",
         screenshots: "Screenshots",
         sources: "GitHub sources",
         description: `
