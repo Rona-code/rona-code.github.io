@@ -1,2 +1,4 @@
 User-agent: *
 Allow: /
+
+Sitemap: https://rona-code.github.io/sitemap.xml
