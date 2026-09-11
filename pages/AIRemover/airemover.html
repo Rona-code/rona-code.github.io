@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Remover</title>
+    <link rel="stylesheet" href="../../style.css">
+    <script src="lang.js" defer></script>
+</head>
+
+<body>
+
+    <!-- HEADER PLEINE LARGEUR -->
+    <header class="project-header">
+        <a href="../../index.html" class="back" id="back">← Retour</a>
+
+        <select id="lang" class="lang-select">
+            <option value="fr">FR</option>
+            <option value="en">EN</option>
+        </select>
+    </header>
+
+    <!-- CONTENU CENTRÉ -->
+    <main class="project-page">
+
+        <h1>AI Remover</h1>
+        <p id="description">
+          <strong>AI Remover — nettoyeur d’Aperçu IA pour Google.</strong><br>
+          Supprime automatiquement les blocs d’IA dans Google Search sans altérer la navigation ni les autres onglets.<br><br>
+          
+          <strong>Masquage dynamique des Aperçu IA</strong><br>
+          <strong>Détection Shadow DOM</strong><br>
+          <strong>Nettoyage en temps réel</strong><br>
+          <strong>Léger & 100% privé</strong><br><br>
+        </p>
+
+        <h2 id="downloads">Téléchargements directs</h2>
+        <div class="download-row">
+            <a class="download-btn web" href="https://github.com/Rona-code/AIRemover/releases/download/V1.0/AIRemover.crx" target="_blank">
+                Chromium (.crx)
+            </a>
+        </div>
+        
+        <h2 id="screenshots">Captures d’écran</h2>
+        
+        <div class="image-slider">
+          <!-- Image APRES (en dessous, taille réelle) -->
+          <img src="../../ressources/AIRemoverAfter.png" alt="Google sans IA" class="img-after">
+        
+          <!-- Image AVANT (au-dessus, rognée dynamiquement) -->
+          <div class="img-before-wrapper">
+            <img src="../../ressources/AIRemoverBefore.png" alt="Google avec IA">
+          </div>
+        
+          <!-- Curseurs / Curseur de glissement -->
+          <input type="range" min="0" max="100" value="50" class="slider-range">
+          <div class="slider-line"></div>
+        </div>
+
+        <h2 id="sources">Sources GitHub</h2>
+        <div class="repo-row">
+            <a class="repo-link" href="https://github.com/Rona-code/AIRemover" target="_blank">Sources</a>
+        </div>
+
+    </main>
+
+</body>
+</html>
