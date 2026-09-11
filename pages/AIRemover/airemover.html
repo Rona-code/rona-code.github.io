@@ -61,8 +61,21 @@
         <div class="repo-row">
             <a class="repo-link" href="https://github.com/Rona-code/AIRemover" target="_blank">Sources</a>
         </div>
-
     </main>
+    
+    <script>
+      const slider = document.querySelector('.slider-range');
+      const beforeWrapper = document.querySelector('.img-before-wrapper');
+      const sliderLine = document.querySelector('.slider-line');
+    
+      if (slider) {
+        slider.addEventListener('input', (e) => {
+          const value = e.target.value + '%';
+          beforeWrapper.style.width = value;
+          sliderLine.style.left = value;
+        });
+      }
+    </script>
 
 </body>
 </html>
