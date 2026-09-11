@@ -12,7 +12,9 @@ const translations = {
           <strong>Détection Shadow DOM</strong><br>
           <strong>Nettoyage en temps réel</strong><br>
           <strong>Léger & 100% privé</strong><br><br>
-        `
+        `,
+        before:"Avant",
+        after:"Après"
     },
 
     en: {
@@ -28,7 +30,9 @@ const translations = {
           <strong>Shadow DOM detection</strong><br>
           <strong>Real‑time clean‑up</strong><br>
           <strong>Lightweight & private</strong><br><br>
-        `
+        `,
+        before:"Before",
+        after:"After"
     }
 };
 
