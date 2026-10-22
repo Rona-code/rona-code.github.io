@@ -14,29 +14,32 @@
 <body>
 
 <header class="header">
-    <div class="header-titles">
-        <h1 data-i18n="title">Stusoft</h1>
-        <p class="subtitle" data-i18n="subtitle">Reprenez le contrôle : logiciels locaux, souverains et sans compromis.</p>
-    </div>
+    <div class="header-container">
+        <div class="header-titles">
+            <h1 data-i18n="title">Stusoft</h1>
+            <p class="subtitle" data-i18n="subtitle">Reprenez le contrôle : logiciels locaux, souverains et sans compromis.</p>
+        </div>
 
-    <div class="header-right">
-        <select id="lang" class="lang-select">
-            <option value="fr">FR</option>
-            <option value="en">EN</option>
-        </select>
-
-        <a href="mailto:rona.chaubell@gmail.com" class="contact-btn"> Contact </a>
+        <div class="header-right">
+            <select id="lang" class="lang-select">
+                <option value="fr">FR</option>
+                <option value="en">EN</option>
+            </select>
+            <a href="mailto:rona.chaubell@gmail.com" class="contact-btn" data-i18n="contact">Contact</a>
+        </div>
     </div>
 </header>
 
 <section class="manifesto">
-    <h2 data-i18n="manifesto_title">Pourquoi ce site ?</h2>
-    <p data-i18n="manifesto_text">
-        Spécialiste du développement desktop indépendant, je conçois des applications local-first. 
-        Je combats la dépendance au cloud, au tout-IA et aux géants technologiques américains pour redonner 
-        aux utilisateurs la pleine souveraineté sur leurs données privées. Pas de pistage, pas de synchronisation opaque : 
-        vos données vous appartiennent.
-    </p>
+    <div class="manifesto-content">
+        <h2 data-i18n="manifesto_title">Pourquoi ce site ?</h2>
+        <p data-i18n="manifesto_text">
+            Spécialiste du développement desktop indépendant, je conçois des applications local-first. 
+            Je combats la dépendance au cloud, au tout-IA et aux géants technologiques américains pour redonner 
+            aux utilisateurs la pleine souveraineté sur leurs données privées. Pas de pistage, pas de synchronisation opaque : 
+            vos données vous appartiennent.
+        </p>
+    </div>
 </section>
     
 <nav class="tabs">
