@@ -3,6 +3,9 @@ const i18n = {
         // --- Header & Général ---
         title: "Stusoft",
         subtitle: "Reprenez le contrôle : logiciels locaux, souverains et sans compromis.",
+        contact: "Contact",
+        manifesto_title: "Pourquoi ce site ?",
+        manifesto_text: "Spécialiste du développement desktop indépendant, je conçois des applications local-first. Je combats la dépendance au cloud, au tout-IA et aux géants technologiques américains pour redonner aux utilisateurs la pleine souveraineté sur leurs données privées. Pas de pistage, pas de synchronisation opaque : vos données vous appartiennent.",
         
         // --- Navigation / Onglets ---
         tab_all: "Tous",
@@ -71,6 +74,9 @@ const i18n = {
         // --- Header & General ---
         title: "Stusoft",
         subtitle: "Take back control: local, sovereign, uncompromising software.",
+        contact: "Contact",
+        manifesto_title: "Why this site?",
+        manifesto_text: "Specialized in independent desktop development, I build local-first applications. I fight against cloud dependency, AI hype, and tech monopolies to give users back full digital sovereignty over their private data. No tracking, no opaque sync: your data belongs to you.",
         
         // --- Navigation / Tabs ---
         tab_all: "All",
