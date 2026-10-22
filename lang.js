@@ -66,7 +66,7 @@ const i18n = {
         windows_desc4: "Restauration de l'accès au lecteur de carte à puce pour les sessions Windows Remote Desktop.",
 
         // --- Footer ---
-        footer_text: "© 2026 Stusoft - Fait a la main par Rona",
+        footer_text: "© 2026 Stusoft - Fait à la main par Rona",
         footer_github: "Retrouvez-moi sur GitHub (Rona-code)"
     },
 
