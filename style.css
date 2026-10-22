@@ -21,16 +21,31 @@ body {
    2. HEADER & NAVIGATION
    ========================================== */
 .header {
+    width: 100%;
+    padding: 30px 20px;
+    box-sizing: border-box;
     display: flex;
-    align-items: center;
-    margin-bottom: 25px;
+    justify-content: center;
 }
-
-.header-right {
-    margin-left: auto;
+.header-container {
+    width: 100%;
+    max-width: 1100px;
     display: flex;
     align-items: center;
-    gap: 15px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+.header-titles h1 {
+    margin: 0 0 5px 0;
+    font-size: 2.2rem;
+    letter-spacing: -0.5px;
+}
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-left: 0; /* Annule l'ancien margin-left: auto */
 }
 
 .contact-btn {
@@ -58,26 +73,36 @@ body {
 
 /* Section Manifesto */
 .manifesto {
-    max-width: 800px;
-    margin: 0 auto 30px auto;
-    padding: 1.5rem;
-    background: rgba(255, 255, 255, 0.03);
-    border-left: 4px solid #7a3cff;
-    border-radius: 6px;
-    text-align: center;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 0 20px;
+    margin-bottom: 40px;
+    box-sizing: border-box;
 }
-.manifesto h2 {
+.manifesto-content {
+    max-width: 1100px;
+    width: 100%;
+    padding: 25px 30px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-left: 4px solid #7a3cff;
+    border-radius: 10px;
+    backdrop-filter: blur(6px);
+}
+.manifesto-content h2 {
     margin-top: 0;
-    margin-bottom: 0.5rem;
-    font-size: 1.2rem;
+    margin-bottom: 12px;
+    font-size: 1.3rem;
     color: #fff;
 }
-.manifesto p {
-    font-size: 0.95rem;
+.manifesto-content p {
+    font-size: 0.98rem;
     opacity: 0.85;
-    line-height: 1.5;
+    line-height: 1.6;
     margin: 0;
 }
+
 .subtitle {
     font-size: 0.85rem;
     opacity: 0.7;
@@ -156,7 +181,6 @@ body {
     background: rgba(0, 0, 0, 0.2);
     border: 1px solid rgba(255, 255, 255, 0.05);
 }
-
 .card img {
     max-width: 85%;
     max-height: 85%;
@@ -178,7 +202,6 @@ body {
     max-height: 120% !important;
     transform: scale(1.4);
 }
-
 .card .info {
     position: absolute;
     inset: 0;
@@ -194,7 +217,6 @@ body {
     text-align: center;
     pointer-events: none;
 }
-
 .card:hover .info {
     opacity: 1;
     pointer-events: auto;
@@ -211,7 +233,6 @@ body {
     padding: 20px 40px;
     box-sizing: border-box;
 }
-
 .project-page {
     max-width: 1100px;
     margin: 0 auto;
@@ -219,14 +240,12 @@ body {
     color: #f2f2f2;
     box-sizing: border-box;
 }
-
 .project-page h1,
 .project-page h2,
 .project-page h3 {
     color: #ffffff;
     text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
 }
-
 .project-page p,
 .project-page li,
 .project-page a {
@@ -240,7 +259,6 @@ body {
     flex-wrap: wrap;
     margin: 15px 0;
 }
-
 .download-btn {
     background: #4CAF50;
     color: white !important;
@@ -312,7 +330,6 @@ body {
     font-size: 0.85rem;
     box-shadow: 0 0 8px rgba(122, 60, 255, 0.5);
 }
-
 .vc-dot {
     width: 10px;
     height: 10px;
@@ -331,14 +348,12 @@ body {
     user-select: none;
     aspect-ratio: 16 / 10;
 }
-
 .img-after {
     display: block;
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
-
 .img-before-wrapper {
     position: absolute;
     top: 0;
@@ -348,7 +363,6 @@ body {
     overflow: hidden;
     z-index: 1;
 }
-
 .img-before-wrapper img {
     position: absolute;
     top: 0;
@@ -370,7 +384,6 @@ body {
     z-index: 2;
     pointer-events: none;
 }
-
 .slider-range {
     position: absolute;
     top: 0;
@@ -397,12 +410,10 @@ body {
     pointer-events: none;
     letter-spacing: 0.5px;
 }
-
 .badge-after {
     right: 12px;
     z-index: 1;
 }
-
 .badge-before {
     left: 12px;
     z-index: 2;
