@@ -66,7 +66,7 @@ const i18n = {
         windows_desc4: "Restauration de l'accès au lecteur de carte à puce pour les sessions Windows Remote Desktop.",
 
         // --- Footer ---
-        footer_text: "© 2026 Stusoft - Fait avec des outils locaux, sans cloud superflu.",
+        footer_text: "© 2026 Stusoft - Fait a la main par Rona",
         footer_github: "Retrouvez-moi sur GitHub (Rona-code)"
     },
 
@@ -137,7 +137,7 @@ const i18n = {
         windows_desc4: "Smart card reader access restoration for Windows Remote Desktop sessions.",
 
         // --- Footer ---
-        footer_text: "© 2026 Stusoft - Made with local tools, no superfluous cloud.",
+        footer_text: "© 2026 Stusoft - Handmade by Rona.",
         footer_github: "Find me on GitHub (Rona-code)",
     }
 };
